@@ -27,17 +27,17 @@
                 <input class=" form-control form-control-sm mr-sm-2 col-md-10 col-sm-0" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn btn-sm btn-outline-success my-2 my-sm-0 col-md-1.5 col-sm-0" type="submit">Search</button>
                 </form>
-                <a class="nav-link pl-md-1.5 pl-sm-0 ml-sm-0" href="/logout" style="padding-top: 5px;">
+                <a class="nav-link pl-md-1.5 pl-sm-0 ml-sm-0 text-white" href="/logout" style="padding-top: 5px;">
                     <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule=" evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
                     </svg>
                 </a>
                 <?php if (logged_in()) : ?>
-                    <a class="nav-link pl-md-1.5 pl-sm-0 ml-sm-0" href="/logout">User</a>
-                    <a class="nav-link pl-sm-0" href="/logout">Logout</a>
+                    <a class="nav-link pl-md-1.5 pl-sm-0 ml-sm-0 text-white" href="/logout">User</a>
+                    <a class="nav-link pl-sm-0 text-white" href="/logout">Logout</a>
                 <?php else : ?>
-                    <a class="nav-link pl-md-1.5 pl-sm-0 ml-sm-0" href="/register">Register</a>
-                    <a class="nav-link pl-sm-0" href="/login">Login</a>
+                    <a class="nav-link pl-md-1.5 pl-sm-0 ml-sm-0 text-white" href="/register">Register</a>
+                    <a class="nav-link pl-sm-0 text-white" href="/login">Login</a>
                 <?php endif ?>
             </div>
         </div>
