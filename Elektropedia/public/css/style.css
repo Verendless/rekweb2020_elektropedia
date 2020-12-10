@@ -1,0 +1,11 @@
+.sampul {
+  width: 80px;
+}
+
+.table > tbody > tr > * {
+  vertical-align: middle;
+}
+
+.card {
+  border-radius: 20px !important;
+}

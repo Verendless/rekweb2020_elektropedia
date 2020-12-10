@@ -29,10 +29,8 @@ class Auth extends BaseConfig
     //--------------------------------------------------------------------
 
     public $views = [
-        // 'login' => 'app\Auth\Views\login',
-        // 'register' => 'Myth\Auth\Views\register',
-        'login' => '\App\Views\Auth\login',
-        'register' => '\App\Views\Auth\register',
+        'login' => 'Myth\Auth\Views\login',
+        'register' => 'Myth\Auth\Views\register',
         'forgot' => 'Myth\Auth\Views\forgot',
         'reset' => 'Myth\Auth\Views\reset',
         'emailForgot' => 'Myth\Auth\Views\emails\forgot',
@@ -100,7 +98,7 @@ class Auth extends BaseConfig
     //  To disable similarity checking set the value to 0.
     //      public $maxSimilarity = 0;
     //
-    public $maxSimilarity = 0;
+    public $maxSimilarity = 50;
 
     //--------------------------------------------------------------------
     // Allow User Registration
@@ -117,8 +115,8 @@ class Auth extends BaseConfig
     // When enabled, every registered user will receive an email message
     // with a special link he have to confirm to activate his account.
     //
-    // public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
-    public $requireActivation = false;
+    public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
+    // public $requireActivation = false;
 
     //--------------------------------------------------------------------
     // Allow to reset password via email
@@ -127,6 +125,7 @@ class Auth extends BaseConfig
     // via specified resetter. Default setting is email.
     //
     public $activeResetter = 'Myth\Auth\Authentication\Resetters\EmailResetter';
+    // public $activeResetter = false;
 
     //--------------------------------------------------------------------
     // Allow Persistent Login Cookies (Remember me)
@@ -137,7 +136,7 @@ class Auth extends BaseConfig
     // you might not want the extra risk associated with this cookie-based
     // solution.
     //
-    public $allowRemembering = false;
+    public $allowRemembering = true;
 
     //--------------------------------------------------------------------
     // Remember Length
@@ -145,7 +144,7 @@ class Auth extends BaseConfig
     // The amount of time, in seconds, that you want a login to last for.
     // Defaults to 30 days.
     //
-    public $rememberLength = 1 * DAY;
+    public $rememberLength = 30 * DAY;
 
     //--------------------------------------------------------------------
     // Error handling
@@ -220,7 +219,7 @@ class Auth extends BaseConfig
         'Myth\Auth\Authentication\Passwords\CompositionValidator',
         'Myth\Auth\Authentication\Passwords\NothingPersonalValidator',
         'Myth\Auth\Authentication\Passwords\DictionaryValidator',
-        //'Myth\Auth\Authentication\Passwords\PwnedValidator',
+        'Myth\Auth\Authentication\Passwords\PwnedValidator',
     ];
 
     //--------------------------------------------------------------------

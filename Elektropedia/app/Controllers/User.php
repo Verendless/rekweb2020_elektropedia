@@ -2,15 +2,12 @@
 
 namespace App\Controllers;
 
-class User extends BaseController
+class Home extends BaseController
 {
     public function index()
     {
-        $data['title'] = 'My Profile';
-
-        return view('user/index', $data);
+        return view('user/index');
     }
-
 
     //--------------------------------------------------------------------
 

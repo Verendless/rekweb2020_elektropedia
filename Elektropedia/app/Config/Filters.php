@@ -15,15 +15,13 @@ class Filters extends BaseConfig
 		'login'      => \Myth\Auth\Filters\LoginFilter::class,
 		'role'       => \Myth\Auth\Filters\RoleFilter::class,
 		'permission' => \Myth\Auth\Filters\PermissionFilter::class,
-
 	];
 
 	// Always applied before every request
 	public $globals = [
 		'before' => [
-			'login'
-
-			//'honeypot'
+			'honeypot',
+			// 'login',
 			// 'csrf',
 		],
 		'after'  => [
@@ -40,5 +38,7 @@ class Filters extends BaseConfig
 	// List filter aliases and any before/after uri patterns
 	// that they should run on, like:
 	//    'isLoggedIn' => ['before' => ['account/*', 'profiles/*']],
-	public $filters = [];
+	public $filters = [
+		'login' => ['before' => ['komik', 'orang']],
+	];
 }
