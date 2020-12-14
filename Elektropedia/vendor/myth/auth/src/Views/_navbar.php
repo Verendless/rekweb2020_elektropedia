@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-white bg-white fixed-top shadow">
     <div class="container">
-        <a class="navbar-brand" href="/">Elektropedia</a>
+        <a class="navbar-brand font-weight-bold text-dark" href="/">Elektropedia</a>
     </div>
 </nav>
