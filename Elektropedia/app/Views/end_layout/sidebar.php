@@ -1,6 +1,6 @@
 <?php if (in_groups('Admin')) : ?>
     <!-- Admin Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
@@ -15,10 +15,25 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-            <a class="nav-link" href="/">
+            <a class="nav-link" href="/admin">
                 <i class="fas fa-fw fa-tachometer-alt"></i>
                 <span>Dashboard</span></a>
         </li>
+        <!-- Divider -->
+        <hr class="sidebar-divider">
+        <!-- Nav Item - User -->
+
+        <div class="sidebar-heading">
+            User Management
+        </div>
+
+        <!-- Nav Item - My Profile -->
+        <li class="nav-item">
+            <a class="nav-link" href="<?= base_url('admin/user'); ?>">
+                <i class="fas fa-users"></i>
+                <span>User List</span></a>
+        </li>
+
 
         <!-- Divider -->
         <hr class="sidebar-divider">
@@ -54,7 +69,7 @@
 
         <!-- Nav Item - Menu Produk -->
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="<?= base_url(); ?>/produk">
                 <i class="fas fa-laptop"></i>
                 <span>Produk</span>
             </a>
