@@ -36,44 +36,49 @@
     <div class="container">
         <h4 class="mb-3">Laptop</h4>
         <div class="row mx-auto">
-            <div class="card mb-3 mx-auto shadow col-md-2">
-                <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
-                <div class="card-body">
-                    <p class="card-title">Laptop Test</p>
-                    <p class="card-text"><small>Rp 100.000,-</small></p>
-                </div>
-            </div>
-            <div class="card mb-3 mx-auto shadow col-md-2">
-                <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
-                <div class="card-body">
-                    <p class="card-title">Laptop Test</p>
-                    <p class="card-text"><small>Rp 100.000,-</small></p>
-                </div>
-            </div>
-            <div class="card mb-3 mx-auto shadow col-md-2">
-                <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
-                <div class="card-body">
-                    <p class="card-title">Laptop Test</p>
-                    <p class="card-text"><small>Rp 100.000,-</small></p>
-                </div>
-            </div>
-            <div class="card mb-3 mx-auto shadow col-md-2">
-                <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
-                <div class="card-body">
-                    <p class="card-title">Laptop Test</p>
-                    <p class="card-text"><small>Rp 100.000,-</small></p>
-                </div>
-            </div>
-            <div class="card mb-3 mx-auto shadow col-md-2">
-                <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
-                <div class="card-body">
-                    <p class="card-title">Laptop Test</p>
-                    <p class="card-text"><small>Rp 100.000,-</small></p>
-                </div>
+            <a href="<?= base_url(); ?>/pages/detail">
+
+                <div class="card mb-3 mx-auto shadow col-md-2">
+
+                    <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
+                    <div class="card-body">
+                        <p class="card-title">Laptop Test</p>
+                        <p class="card-text"><small>Rp 100.000,-</small></p>
+
+                    </div>
+            </a>
+        </div>
+        <div class="card mb-3 mx-auto shadow col-md-2">
+            <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
+            <div class="card-body">
+                <p class="card-title">Laptop Test</p>
+                <p class="card-text"><small>Rp 100.000,-</small></p>
             </div>
         </div>
-        <a href="">See More!</a>
-        <hr>
+        <div class="card mb-3 mx-auto shadow col-md-2">
+            <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
+            <div class="card-body">
+                <p class="card-title">Laptop Test</p>
+                <p class="card-text"><small>Rp 100.000,-</small></p>
+            </div>
+        </div>
+        <div class="card mb-3 mx-auto shadow col-md-2">
+            <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
+            <div class="card-body">
+                <p class="card-title">Laptop Test</p>
+                <p class="card-text"><small>Rp 100.000,-</small></p>
+            </div>
+        </div>
+        <div class="card mb-3 mx-auto shadow col-md-2">
+            <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
+            <div class="card-body">
+                <p class="card-title">Laptop Test</p>
+                <p class="card-text"><small>Rp 100.000,-</small></p>
+            </div>
+        </div>
+    </div>
+    <a href="">See More!</a>
+    <hr>
     </div>
 </section>
 
@@ -85,8 +90,10 @@
             <div class="card mb-3 mx-auto shadow col-md-2">
                 <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
                 <div class="card-body">
+
                     <p class="card-title">Laptop Test</p>
                     <p class="card-text"><small>Rp 100.000,-</small></p>
+
                 </div>
             </div>
             <div class="card mb-3 mx-auto shadow col-md-2">

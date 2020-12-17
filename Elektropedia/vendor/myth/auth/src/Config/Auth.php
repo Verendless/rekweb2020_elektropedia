@@ -115,8 +115,8 @@ class Auth extends BaseConfig
     // When enabled, every registered user will receive an email message
     // with a special link he have to confirm to activate his account.
     //
-    public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
-    // public $requireActivation = false;
+    // public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
+    public $requireActivation = false;
 
     //--------------------------------------------------------------------
     // Allow to reset password via email

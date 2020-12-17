@@ -20,6 +20,14 @@ class Pages extends BaseController
         return view('pages/about', $data);
     }
 
+    public function detail()
+    {
+        $data = [
+            'title' => 'Detail'
+        ];
+        return view('pages/detail', $data);
+    }
+
     public function contact()
     {
         $data = [

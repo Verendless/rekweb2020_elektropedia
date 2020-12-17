@@ -51,7 +51,7 @@
                 </div>
                 <div class="col-md-5 offset-col-md-2  mx-0">
                     <ul class="list-unstyled">
-                        <li><small>© 2020 - 2020 PT. Elektropedia All Rights Reserved.</small></li>
+                        <span>Copyright &copy; Elektropedia <?= date('Y'); ?></span>
                         <li><small>All other trademarks belong to their respective owners.</small> </li>
                     </ul>
                 </div>

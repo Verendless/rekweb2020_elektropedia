@@ -33,6 +33,16 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
 $routes->get('/', 'User::index');
+$routes->get('/produk/create', 'Produk::create');
+$routes->get('/produk/(:any)', 'Produk::detail/$1');
+
+
+// // route since we don't have to scan directories.
+// $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
+// $routes->get('/admin/user', 'Admin::index', ['filter' => 'role:admin']);
+// $routes->get('/admin/(:num)', 'Admin::detail/$1', ['filter' => 'role:admin']);
+
+
 
 // $routes->get('/komik/create', 'Komik::create');
 // $routes->get('/komik/edit/(:segment)', 'Komik::edit/$1');

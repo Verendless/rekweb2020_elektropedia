@@ -42,14 +42,22 @@
                         <i class="fa fa-bars"></i>
                     </button>
 
+
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
+
+                        <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
+                            <a>
+                                <a><?= date('d-m-Y') ?></a>
+                            </a>
+                        </li>
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Douglas McGee</span>
-                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= user()->username; ?></span>
+                                <img class="img-profile rounded-circle" src="<?= base_url('/img/' . user()->user_image); ?>">
                             </a>
+
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <?php if (in_groups('Admin')) : ?>
@@ -80,7 +88,7 @@
             <!-- End of Main Content -->
 
             <!-- Footer -->
-            <?= $this->include('layout/footer'); ?>
+
             <!-- End of Footer -->
 
         </div>
@@ -112,6 +120,8 @@
             </div>
         </div>
     </div>
+
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url(); ?>/vendor/jquery/jquery.min.js"></script>
