@@ -12,30 +12,29 @@
                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
                         <input type="text" class="form-control  <?= ($validation->hasError('nama')) ?
-                                                                    'is-invalid' : '';  ?>" id="nama" name="nama" autofocus value="<?= old('judul'); ?>">
-                        <div id="validationServer03Feedback" class="invalid-feedback">
+                                                                    'is-invalid' : '';  ?>" id="nama" name="nama" autofocus value="<?= old('nama'); ?>">
+                        <div class="invalid-feedback">
                             <?= $validation->getError('nama'); ?>
                         </div>
                     </div>
                 </div>
                 <div class="form-group row">
-                    <label for="deksripsi" class="col-sm-2 col-form-label">Deksripsi</label>
+                    <label class="col-sm-2 col-form-label" for="kategori">Kategori</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="deksripsi" name="deksripsi" value="<?= old('deksripsi'); ?>">
-
-
+                        <select class="custom-select" id="kategori" name="kategori">
+                            <option selected>Kategori...</option>
+                            <option value="Laptop">Laptop</option>
+                            <option value="Smartphone">Smartphone</option>
+                            <option value="kamera">kamera</option>
+                            <option value="Aksesoris">Aksesoris</option>
+                        </select>
                     </div>
+
                 </div>
                 <div class="form-group row">
-                    <label for="berat" class="col-sm-2 col-form-label">Berat</label>
+                    <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="berat" name="berat" value="<?= old('berat'); ?>">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="kondisi" class="col-sm-2 col-form-label">Kondisi</label>
-                    <div class="col-sm-10">
-                        <input type="text" class="form-control" id="kondisi" name="kondisi" value="<?= old('kondisi'); ?>">
+                        <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" value="<?= old('deskripsi'); ?>"></textarea>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -45,26 +44,30 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="berat" class="col-sm-2 col-form-label">Berat</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="berat" name="berat" value="<?= old('berat'); ?>">
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="gambar" class="col-sm-2 col-form-label">Gambar</label>
                     <div class="col-sm-2">
                         <img src="/img/default.jpg" class="img-thumbnail img-preview">
                     </div>
                     <div class="col-sm-8">
                         <div class="custom-file">
-                            <input type="file" class="custom-file-input <?= ($validation->hasError('gambar')) ?
-                                                                            'is-invalid' : '';  ?>" id="gambar" name="gambar" onchange="previewImg()">
-                            <div id="validationServer03Feedback" class="invalid-feedback">
+                            <input type="file" class="custom-file-input <?= ($validation->hasError('gambar')) ? 'is-invalid' : ''; ?>" id="gambar" name="gambar" onchange="previewImg()">
+                            <div class="invalid-feedback">
                                 <?= $validation->getError('gambar'); ?>
                             </div>
-                            <label class="custom-file-label" for="gambar">Pilih Gambar..</label>
+                            <label class="custom-file-label" for="gambar">Pilih Gambar</label>
                         </div>
-                        <!-- <input type="text" class="form-control" id="sampul" name="sampul" value="<?= old('gambar'); ?>"> -->
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <div class="col-sm-10">
-                        <button type="submit" class="btn btn-primary">Tambah Data </button>
+                        <button type="submit" name="tambah" id="tambah" class="btn btn-primary">Tambah Data </button>
                     </div>
                 </div>
             </form>

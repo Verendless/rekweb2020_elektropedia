@@ -55,8 +55,8 @@ class Produk extends BaseController
             'nama' => [
                 'rules' => 'required|is_unique[produk.nama]',
                 'errors' => [
-                    'required' => '{field} produk harus diisi',
-                    'is_unique' => '{field} produk sudah terdaftar'
+                    'required' => '{field} Produk harus diisi',
+                    'is_unique' => '{field} Produk sudah terdaftar'
                 ]
             ],
             'gambar' => [
@@ -66,7 +66,35 @@ class Produk extends BaseController
                     'is_image' => 'Anda Tidak memilih gambar',
                     'mime_in' => 'Anda Tidak memilih gambar'
                 ]
-            ]
+            ],
+            'berat' => [
+                'rules' => 'required',
+                'errors' =>
+                [
+                    'required' => '{field} Berat harus diisi',
+                ]
+            ],
+            'harga' => [
+                'rules' => 'required',
+                'errors' =>
+                [
+                    'required' => '{field} Harga harus diisi',
+                ]
+            ],
+            'kategori' => [
+                'rules' => 'required',
+                'errors' =>
+                [
+                    'required' => '{field} Kategori harus diisi',
+                ]
+            ],
+            'deskripsi' => [
+                'rules' => 'required',
+                'errors' =>
+                [
+                    'required' => '{field} Deskripsi harus diisi',
+                ]
+            ],
         ])) {
             // $validation = \Config\Services::validation();
             // return redirect()->to('/komik/create')->withInput()->with('validation', $validation);]
@@ -88,13 +116,12 @@ class Produk extends BaseController
         // //ambil nama file sampul
         // $namaSampul = $fileSampul->getName();
 
-        // $slug = url_title($this->request->getVar('nama'), '-', true);
         $this->produkModel->save([
             'nama' => $this->request->getVar('nama'),
-            'deksripsi' => $this->request->getVar('deksripsi'),
+            'deskripsi' => $this->request->getVar('deskripsi'),
             'berat' => $this->request->getVar('berat'),
-            'kondisi' => $this->request->getVar('kondisi'),
             'harga' => $this->request->getVar('harga'),
+            'kategori' => $this->request->getVar('kategori'),
 
             'gambar' => $namaSampul
 

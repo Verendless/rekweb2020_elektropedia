@@ -8,18 +8,10 @@ class ProdukModel extends Model
 {
     protected $table = 'produk';
     protected $useTimestamps = true;
-    protected $allowedFields = ['idBarang', 'nama', 'deskripsi', 'berat', 'kondisi', 'harga', 'gambar', 'idPenjual'];
-
-    public function search($keyword)
-    {
-        // $builder = $this->table('orang');
-        // $builder->like('nama', $keyword);
-        // return $builder;
-
-        return $this->table('produk')->like('nama', $keyword)->orLike('harga', $keyword);
-    }
-
-
+    protected $primaryKey = 'idProduk';
+    protected $createdField = 'tanggalEntry';
+    protected $updatedField = 'tanggalEdit';
+    protected $allowedFields = ['idProduk', 'nama', 'kategori', 'deskripsi', 'berat', 'harga', 'gambar'];
 
     public function getProduk()
     {

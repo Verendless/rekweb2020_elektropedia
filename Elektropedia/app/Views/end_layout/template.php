@@ -45,8 +45,7 @@
 
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-
-                        <li class="dropdown notification-list list-inline-item d-none d-md-inline-block">
+                        <li class="nav-item pt-md-4">
                             <a>
                                 <a><?= date('d-m-Y') ?></a>
                             </a>
@@ -54,16 +53,16 @@
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><?= user()->username; ?></span>
+                                <span class="mr-2 d-none d-lg-inline text-gray-600"><b><?= user()->username; ?></b></span>
                                 <img class="img-profile rounded-circle" src="<?= base_url('/img/' . user()->user_image); ?>">
                             </a>
 
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                                 <?php if (in_groups('Admin')) : ?>
-                                    <a class="dropdown-item" href="admin/">
+                                    <a class="dropdown-item" href="/">
                                         <i class="fas fa-tachometer-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                        Dashboard
+                                        Main Menu
                                     </a>
                                 <?php else : ?>
                                     <a class="dropdown-item" href="user/">

@@ -85,6 +85,7 @@
             <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
                 <div class="bg-white py-2 collapse-inner rounded">
                     <h6 class="collapse-header">Daftar Kategori:</h6>
+                    <a class="collapse-item" href="/produk">Semua Kategori</a>
                     <a class="collapse-item" href="">Laptop</a>
                     <a class="collapse-item" href="">Smartphones</a>
                     <a class="collapse-item" href="">Cameras</a>
@@ -95,7 +96,7 @@
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="charts.html">
+            <a class="nav-link" href=" <?= base_url(); ?>/produk/create">
                 <i class="fas fa-fw fa-plus-circle"></i>
                 <span>Tambah Produk</span></a>
         </li>

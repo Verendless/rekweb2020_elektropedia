@@ -16,11 +16,8 @@
                     <div class="col-md-8">
                         <div class="card-body">
                             <h5 class="card-title"><?= $produk['nama']; ?></h5>
-                            <!-- <p class="card-text"><b>Penulis : </b><?= $komik['penulis']; ?></p>
-                            <p class="card-text"><small class="text-muted"><b>Penerbit :</b>
-                                    <?= $komik['penerbit']; ?></p>
+                            <?= $komik['penerbit']; ?></p>
                             <a href="/komik/edit/<?= $komik['slug']; ?>"/ class="btn btn-warning">Edit</a>
- -->
                             <form action="/komik/<?= $komik['id']; ?>" method="post" class="d-inline">
                                 <?= csrf_field(); ?>
                                 <input type="hidden" name="_method" value="DELETE">
