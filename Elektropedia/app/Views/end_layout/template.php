@@ -125,13 +125,26 @@
     <!-- Bootstrap core JavaScript-->
     <script src="<?= base_url(); ?>/vendor/jquery/jquery.min.js"></script>
     <script src="<?= base_url(); ?>/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Core plugin JavaScript-->
     <script src="<?= base_url(); ?>/vendor/jquery-easing/jquery.easing.min.js"></script>
-
     <!-- Custom scripts for all pages-->
     <script src="<?= base_url(); ?>/js/sb-admin-2.min.js"></script>
+    <script>
+        function previewImg() {
+            const sampul = document.querySelector('#gambar');
+            const sampulLabel = document.querySelector('.custom-file-label');
+            const imgPreview = document.querySelector('.img-preview');
 
+            sampulLabel.textContent = sampul.files[0].name;
+
+            const fileSampul = new FileReader();
+            fileSampul.readAsDataURL(sampul.files[0]);
+
+            fileSampul.onload = function(e) {
+                imgPreview.src = e.target.result;
+            }
+        }
+    </script>
 </body>
 
 </html>

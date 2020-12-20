@@ -43,8 +43,8 @@
                     <th scope="col">Foto Produk</th>
                     <th scope="col">Nama Produk</th>
                     <th scope="col">Kategori</th>
-                    <th scope="col">Deksripsi</th>
-                    <th scope="col" class="col-5">Harga</th>
+                    <th scope="col">Harga</th>
+                    <th scope="col">Stok</th>
                     <th scope="col">Berat</th>
                     <th scope="col">Aksi</th>
                 </tr>
@@ -58,12 +58,14 @@
                         <td><img src="<?= base_url(); ?>/img/<?= $p['gambar']; ?>" class="card-img gambarProduk" alt="Gambar Produk"></td>
                         <td><?= $p['nama']; ?></td>
                         <td><?= $p['kategori']; ?></td>
-                        <td class="col-md-3" style="text-align: justify;"><?= $p['deskripsi']; ?></td>
                         <td>Rp <?= $p['harga']; ?></td>
+                        <td><?= $p['stok']; ?></td>
                         <td><?= $p['berat']; ?>KG</td>
 
                         <td>
-                            <a href="/produk/<?= $p['idProduk']; ?>" class="btn btn-success">Detail</a>
+                            <a href="" class="btn btn-success">Detail</a>
+                            <a href="/produk/edit/<?= $p['idProduk']; ?>" class="btn btn-primary">Ubah</a>
+                            <a href="/produk/delete/<?= $p['idProduk']; ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Produk <?= $p['nama']; ?>?');">Delete</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>
