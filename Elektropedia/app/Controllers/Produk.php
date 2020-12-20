@@ -168,11 +168,18 @@ class Produk extends BaseController
 
     public function update($idProduk)
     {
+        $produkLama = $this->produkModel->getProduk($this->request->getVar('idProduk'));
+        if ($produkLama['nama'] == $this->request->getVar('nama')) {
+            $rule_nama = 'required';
+        } else {
+            $rule_nama = 'required|is_unique[produk.nama]';
+        }
+
         //validasi input
         if (!$this->validate([
             // 'judul' => 'required|is_unique[komik.judul]'
             'nama' => [
-                'rules' => 'required|is_unique[produk.nama]',
+                'rules' => $rule_nama,
                 'errors' => [
                     'required' => '{field} Produk harus diisi',
                     'is_unique' => '{field} Produk sudah terdaftar'
@@ -224,23 +231,25 @@ class Produk extends BaseController
         ])) {
             // $validation = \Config\Services::validation();
             // return redirect()->to('/komik/create')->withInput()->with('validation', $validation);]
-            return redirect()->to('/produk/edit/' . $this->request->getVar($idProduk))->withInput();
+            return redirect()->to('/produk/edit/' . $this->request->getVar('idProduk'))->withInput();
         }
-        //ambil gambar
-        $fileSampul = $this->request->getFile('gambar');
-        //apakah ada gambar?
-        if ($fileSampul->getError() == 4) {
-            $namaSampul = 'default.png';
+
+        $fileGambar = $this->request->getFile('gambar');
+        $gambarLama = $this->request->getVar('gambarLama');
+        // cek gambar, apakah tetap gambar lama
+        if ($fileGambar->getError() == 4) {
+            $namaGambar = $gambarLama;
         } else {
-
-            //generate nama sampul random
-            $namaSampul = $fileSampul->getRandomName();
-            //pindahkan file ke folder img
-            $fileSampul->move('img', $namaSampul);
+            // generate nama file random
+            $namaGambar = $fileGambar->getRandomName();
+            // pindahkan gambar
+            $fileGambar->move('img', $namaGambar);
+            // hapus file lama
+            $produk = $this->produkModel->find(($idProduk));
+            if ($produk['gambar'] != 'default.jpg') {
+                unlink('img/' . $this->request->getVar('gambarLama'));
+            }
         }
-
-        // //ambil nama file sampul
-        // $namaSampul = $fileSampul->getName();
 
         $this->produkModel->save([
             'idProduk' => $idProduk,
@@ -250,8 +259,7 @@ class Produk extends BaseController
             'harga' => $this->request->getVar('harga'),
             'stok' => $this->request->getVar('stok'),
             'kategori' => $this->request->getVar('kategori'),
-
-            'gambar' => $namaSampul
+            'gambar' => $namaGambar
 
         ]);
 

@@ -7,6 +7,8 @@
             <h2 class="my-3 ">Form Ubah Data Produk</h2>
             <form action="/produk/update/<?= $produk['idProduk']; ?>" method="post" enctype="multipart/form-data">
                 <?= csrf_field(); ?>
+                <input type="hidden" name="idProduk" value="<?= $produk['idProduk']; ?>">
+                <input type="hidden" name="gambarLama" value="<?= $produk['gambar']; ?>">
                 <div class="form-group row">
                     <label for="nama" class="col-sm-2 col-form-label">Nama</label>
                     <div class="col-sm-10">
