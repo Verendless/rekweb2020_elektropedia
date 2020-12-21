@@ -5,11 +5,21 @@
 <div class="container-fluid">
 
     <!-- Page Heading -->
-    <h1 class="h3 mb-4 text-gray-800">User LIST</h1>
-
+    <h1 class="h3 mb-4 text-gray-800">Daftar User</h1>
     <div class="row">
-        <div class="col-lg-8">
-
+        <div class="col-md-4">
+            <form action="" method="POST">
+                <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="" name="keyword">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="submit" name="submit" id="submit">Cari</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
             <table class="table table-bordered">
                 <thead>
                     <tr>
@@ -37,10 +47,8 @@
                     <?php endforeach; ?>
                 </tbody>
             </table>
-
-
+            <?= $pager->links('users', 'pagination'); ?>
         </div>
-
     </div>
 
 </div>

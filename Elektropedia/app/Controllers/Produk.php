@@ -26,7 +26,6 @@ class Produk extends BaseController
 
         $data = [
             'title' => 'Daftar Produk',
-            // 'produk' => $this->produkModel->getProduk()
             'produk' => $produk->paginate(10, 'produk'),
             'pager' => $this->produkModel->pager,
             'currentPage' => $currentPage
