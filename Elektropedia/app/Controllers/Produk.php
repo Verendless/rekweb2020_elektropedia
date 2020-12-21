@@ -15,13 +15,27 @@ class Produk extends BaseController
     }
     public function index()
     {
+        $currentPage = $this->request->getVar('page_produk') ? $this->request->getVar('page_produk') : 1;
+
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $produk = $this->produkModel->search($keyword);
+        } else {
+            $produk = $this->produkModel;
+        }
+
         $data = [
-            'title' => 'Produk',
-            'produk' => $this->produkModel->getProduk()
+            'title' => 'Daftar Produk',
+            // 'produk' => $this->produkModel->getProduk()
+            'produk' => $produk->paginate(10, 'produk'),
+            'pager' => $this->produkModel->pager,
+            'currentPage' => $currentPage
+
 
         ];
         return view('produk/index', $data);
     }
+
     // public function detail($idBarang = 0)
     // {
 
@@ -103,8 +117,7 @@ class Produk extends BaseController
                 ]
             ],
         ])) {
-            // $validation = \Config\Services::validation();
-            // return redirect()->to('/komik/create')->withInput()->with('validation', $validation);]
+
             return redirect()->to('/produk/create')->withInput();
         }
         //ambil gambar
@@ -177,7 +190,6 @@ class Produk extends BaseController
 
         //validasi input
         if (!$this->validate([
-            // 'judul' => 'required|is_unique[komik.judul]'
             'nama' => [
                 'rules' => $rule_nama,
                 'errors' => [
@@ -229,8 +241,6 @@ class Produk extends BaseController
                 ]
             ],
         ])) {
-            // $validation = \Config\Services::validation();
-            // return redirect()->to('/komik/create')->withInput()->with('validation', $validation);]
             return redirect()->to('/produk/edit/' . $this->request->getVar('idProduk'))->withInput();
         }
 

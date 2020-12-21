@@ -21,4 +21,13 @@ class ProdukModel extends Model
 
         return $this->where(['idProduk' => $idProduk])->first();
     }
+
+    public function search($keyword)
+    {
+        // $builder = $this->table('produk');
+        // $builder->like('nama', $keyword);
+        // return $builder;
+
+        return $this->table('produk')->like('nama', $keyword)->orLike('kategori', $keyword);
+    }
 }

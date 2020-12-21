@@ -7,7 +7,6 @@
 <section class="mt-4">
 
     <div class="container-fluid">
-
         <h1 class="h3 mb-4 text-gray-800">Produk</h1>
         <div class="row">
             <div class="col-md-4 col-sm-10">
@@ -50,7 +49,7 @@
                 </tr>
             </thead>
             <tbody>
-                <?php $i = 1; ?>
+                <?php $i = 1 + (10 * ($currentPage - 1)); ?>
                 <?php foreach ($produk as $p) : ?>
                     <tr>
                         <th scope="row"><?= $i++; ?></th>
@@ -69,9 +68,9 @@
                         </td>
                     </tr>
                 <?php endforeach; ?>
-
             </tbody>
         </table>
+        <?= $pager->links('produk', 'produk_pagination'); ?>
     </div>
 </div>
 
