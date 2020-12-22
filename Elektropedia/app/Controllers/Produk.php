@@ -26,7 +26,7 @@ class Produk extends BaseController
 
         $data = [
             'title' => 'Daftar Produk',
-            'produk' => $produk->paginate(10, 'produk'),
+            'produk' => $produk->paginate(5, 'produk'),
             'pager' => $this->produkModel->pager,
             'currentPage' => $currentPage
 
@@ -35,12 +35,23 @@ class Produk extends BaseController
         return view('produk/index', $data);
     }
 
-    public function detail($namaBarang)
+    public function laptop()
+    {
+        $data = [
+            'title' => "Laptop",
+            'produkLaptop' => $this->produkModel->getProdukByCategory('laptop'),
+        ];
+
+        return view('produk/laptop', $data);
+    }
+
+    public function detail($kategori, $namaBarang)
     {
 
         $data = [
             'title' => $namaBarang,
-            'produk' => $this->produkModel->getProduk($namaBarang)
+            'produk' => $this->produkModel->getProdukByNama($namaBarang),
+            'relevanProduk' => $this->produkModel->getProdukByCategory($kategori),
 
         ];
         if (empty($data['produk'])) {
@@ -173,14 +184,14 @@ class Produk extends BaseController
         $data = [
             'title' => 'Form Ubah Data',
             'validation' => \Config\Services::validation(),
-            'produk' => $this->produkModel->getProduk($idProduk)
+            'produk' => $this->produkModel->getProductById($idProduk)
         ];
         return view('produk/edit', $data);
     }
 
     public function update($idProduk)
     {
-        $produkLama = $this->produkModel->getProduk($this->request->getVar('idProduk'));
+        $produkLama = $this->produkModel->getProductById($this->request->getVar('idProduk'));
         if ($produkLama['nama'] == $this->request->getVar('nama')) {
             $rule_nama = 'required';
         } else {

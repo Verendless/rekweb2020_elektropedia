@@ -13,7 +13,15 @@ class ProdukModel extends Model
     protected $updatedField = 'tanggalEdit';
     protected $allowedFields = ['idProduk', 'nama', 'kategori', 'deskripsi', 'berat', 'harga', 'stok', 'gambar'];
 
-    public function getProduk($namaBarang = false)
+    public function getProductById($idProduk = false)
+    {
+        if ($idProduk == false) {
+            return $this->findAll();
+        }
+        return $this->where(['idProduk' => $idProduk])->first();
+    }
+
+    public function getProdukByNama($namaBarang = false)
     {
         if ($namaBarang == false) {
             return $this->findAll();
@@ -21,31 +29,10 @@ class ProdukModel extends Model
         return $this->where(['nama' => $namaBarang])->first();
     }
 
-    public function getProdukLaptop()
+    public function getProdukByCategory($kategori)
     {
         $sql = "SELECT * FROM produk WHERE kategori = ?";
-        $result = $this->db->query($sql, ['laptop']);
-        return $result->getResultArray();
-    }
-
-    public function getProdukSmartphone()
-    {
-        $sql = "SELECT * FROM produk WHERE kategori = ?";
-        $result = $this->db->query($sql, ['smartphone']);
-        return $result->getResultArray();
-    }
-
-    public function getProdukKamera()
-    {
-        $sql = "SELECT * FROM produk WHERE kategori = ?";
-        $result = $this->db->query($sql, ['kamera']);
-        return $result->getResultArray();
-    }
-
-    public function getProdukAksesoris()
-    {
-        $sql = "SELECT * FROM produk WHERE kategori = ?";
-        $result = $this->db->query($sql, ['aksesoris']);
+        $result = $this->db->query($sql, [$kategori]);
         return $result->getResultArray();
     }
 

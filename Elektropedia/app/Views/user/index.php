@@ -5,11 +5,12 @@
 <div class="container-fluid">
     <!-- Page Heading -->
     <h1 class="h3 text-gray-800">My Profile</h1>
+    <hr>
     <div class="row">
         <div class="col-4 mt-md-4 bg-light">
             <div class="container">
                 <h4>Proile Picture</h4>
-                <img src="/img/<?= $user['user_image']; ?>" width="400px" class="img-fluid p-md-auto" alt="User Image Profile">
+                <img src="/img/<?= $user['user_image']; ?>" width="400px" class="img-fluid p-md-auto rounded " alt="User Image Profile">
             </div>
         </div>
         <div class="col-6 mt-md-4 ml-md-2 bg-light">

@@ -2,21 +2,21 @@
 
 namespace App\Controllers;
 
-use Myth\Auth\Models\UserModel;
+use App\Models\ModelUser;
 
 class User extends BaseController
 {
     protected $userModel;
     public function __construct()
     {
-        $this->userModel = new UserModel();
+        $this->userModel = new ModelUser();
     }
 
     public function index()
     {
         $data = [
             'title' => 'My Profile',
-            'user' => $this->userModel->getUserRole(),
+            'user' => $this->userModel->getUser(),
         ];
         return view('user/index', $data);
     }

@@ -16,10 +16,10 @@ class Pages extends BaseController
     {
         $data = [
             'title' => 'Elektropedia',
-            'produkLaptop' => $this->produkModel->getProdukLaptop(),
-            'produkSmartphone' => $this->produkModel->getProdukSmartphone(),
-            'produkKamera' => $this->produkModel->getProdukKamera(),
-            'produkAksesoris' => $this->produkModel->getProdukAksesoris(),
+            'produkLaptop' => $this->produkModel->getProdukByCategory('laptop'),
+            'produkSmartphone' => $this->produkModel->getProdukByCategory('smartphone'),
+            'produkKamera' => $this->produkModel->getProdukByCategory('kamera'),
+            'produkAksesoris' => $this->produkModel->getProdukByCategory('aksesoris'),
 
         ];
         return view('pages/home', $data);
