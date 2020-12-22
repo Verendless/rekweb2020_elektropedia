@@ -31,7 +31,7 @@
         <li class="nav-item">
             <a class="nav-link" href="<?= base_url('admin/user'); ?>">
                 <i class="fas fa-users"></i>
-                <span>User List</span></a>
+                <span>Daftar User</span></a>
         </li>
 
 
@@ -77,7 +77,7 @@
 
 
         <!-- Nav Item - Kategori Collapse Menu -->
-        <li class="nav-item">
+        <!-- <li class="nav-item">
             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
                 <i class="fas fa-fw fa-clipboard-list"></i>
                 <span>Kategori</span>
@@ -91,11 +91,11 @@
                     <a class="collapse-item" href="">Accessories</a>
                 </div>
             </div>
-        </li>
+        </li> -->
 
         <!-- Nav Item - Charts -->
         <li class="nav-item">
-            <a class="nav-link" href="charts.html">
+            <a class="nav-link" href=" <?= base_url(); ?>/produk/create">
                 <i class="fas fa-fw fa-plus-circle"></i>
                 <span>Tambah Produk</span></a>
         </li>
