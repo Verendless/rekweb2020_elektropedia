@@ -14,3 +14,42 @@ footer.sticky-footer {
   padding: 3.3rem 0;
   flex-shrink: 0;
 }
+<<<<<<< Updated upstream
+=======
+
+.btn-keranjang {
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Darker background on mouse-over */
+.btn-keranjang:hover {
+  background-color: RoyalBlue;
+}
+
+.btn-beli {
+  background-color: Green;
+  border: none;
+  color: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.btn-beli:hover {
+  background-color: #92a8d1;
+}
+
+.gambarProduk {
+  width: 100px !important;
+}
+
+ul.linkProduk li {
+  display: inline;
+  text-decoration: none;
+}
+>>>>>>> Stashed changes

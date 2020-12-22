@@ -35,12 +35,25 @@
 <section class="mt-4">
     <div class="container">
         <h4 class="mb-3">Laptop</h4>
+<<<<<<< Updated upstream
         <div class="row mx-auto">
             <div class="card mb-3 mx-auto shadow col-md-2">
                 <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
                 <div class="card-body">
                     <p class="card-title">Laptop Test</p>
                     <p class="card-text"><small>Rp 100.000,-</small></p>
+=======
+        <div class="row d-flex justify-content-start">
+            <?php foreach ($produkLaptop as $pl) : ?>
+                <div class="card mb-3 mx-3 shadow col-md-2">
+                    <a href="/produk/<?= $pl['nama']; ?>">
+                        <img src="/img/<?= $pl['gambar']; ?>" class="card-img-top pt-4" alt="<?= $pl['nama']; ?>">
+                        <div class="card-body">
+                            <p class="card-title"><?= $pl['nama']; ?></p>
+                            <p class="card-text"><small>Rp <?= number_format($pl['harga']); ?>,-</small></p>
+                        </div>
+                    </a>
+>>>>>>> Stashed changes
                 </div>
             </div>
             <div class="card mb-3 mx-auto shadow col-md-2">
@@ -72,7 +85,7 @@
                 </div>
             </div>
         </div>
-        <a href="">See More!</a>
+        <a href="" class="btn btn-primary">See More!</a>
         <hr>
     </div>
 </section>
@@ -80,6 +93,7 @@
 <!-- Smartphone Section -->
 <section class="mt-4">
     <div class="container">
+<<<<<<< Updated upstream
         <h4 class="mb-3">Laptop</h4>
         <div class="row mx-auto">
             <div class="card mb-3 mx-auto shadow col-md-2">
@@ -94,6 +108,41 @@
                 <div class="card-body">
                     <p class="card-title">Laptop Test</p>
                     <p class="card-text"><small>Rp 100.000,-</small></p>
+=======
+        <h4 class="mb-3">Smartphone</h4>
+        <div class="row d-flex justify-content-start">
+            <?php foreach ($produkSmartphone as $ps) : ?>
+                <div class="card mb-3 mx-3 shadow col-md-2 ">
+                    <a href="/produk/<?= $ps['nama']; ?>">
+                        <img src="/img/<?= $ps['gambar']; ?>" width="50px" class="card-img-top pt-4" alt="<?= $ps['nama']; ?>">
+                        <div class="card-body">
+                            <p class="card-title"><?= $ps['nama']; ?></p>
+                            <p class="card-text"><small>Rp <?= number_format($ps['harga']); ?>,-</small></p>
+                        </div>
+                    </a>
+                </div>
+            <?php endforeach ?>
+        </div>
+        <a href="" class="btn btn-primary">See More!</a>
+        <hr>
+    </div>
+</section>
+
+<!-- Kamera Section -->
+<section class="mt-4">
+    <div class="container">
+        <h4 class="mb-3">Kamera</h4>
+        <div class="row d-flex justify-content-start">
+            <?php foreach ($produkKamera as $pk) : ?>
+                <div class="card mb-3 mx-3 shadow col-md-2 ">
+                    <a href="/produk/<?= $pk['nama']; ?>">
+                        <img src="/img/<?= $pk['gambar']; ?>" width="50px" class="card-img-top pt-4" alt="<?= $pk['nama']; ?>">
+                        <div class="card-body">
+                            <p class="card-title"><?= $pk['nama']; ?></p>
+                            <p class="card-text"><small>Rp <?= number_format($pk['harga']); ?>,-</small></p>
+                        </div>
+                    </a>
+>>>>>>> Stashed changes
                 </div>
             </div>
             <div class="card mb-3 mx-auto shadow col-md-2">
@@ -118,7 +167,7 @@
                 </div>
             </div>
         </div>
-        <a href="">See More!</a>
+        <a href="" class="btn btn-primary">See More!</a>
         <hr>
     </div>
 </section>
@@ -126,6 +175,7 @@
 <!-- Smartphone Section -->
 <section class="mt-4">
     <div class="container">
+<<<<<<< Updated upstream
         <h4 class="mb-3">Laptop</h4>
         <div class="row mx-auto">
             <div class="card mb-3 mx-auto shadow col-md-2">
@@ -133,6 +183,19 @@
                 <div class="card-body">
                     <p class="card-title">Laptop Test</p>
                     <p class="card-text"><small>Rp 100.000,-</small></p>
+=======
+        <h4 class="mb-3">Aksesoris</h4>
+        <div class="row d-flex justify-content-start">
+            <?php foreach ($produkAksesoris as $pa) : ?>
+                <div class="card mb-3 mx-3 shadow col-md-2 ">
+                    <a href="/produk/<?= $pa['nama']; ?>">
+                        <img src="/img/<?= $pa['gambar']; ?>" width="50px" class="card-img-top pt-4" alt="<?= $pa['nama']; ?>">
+                        <div class="card-body">
+                            <p class="card-title"><?= $pa['nama']; ?></p>
+                            <p class="card-text"><small>Rp <?= number_format($pa['harga']); ?>,-</small></p>
+                        </div>
+                    </a>
+>>>>>>> Stashed changes
                 </div>
             </div>
             <div class="card mb-3 mx-auto shadow col-md-2">
