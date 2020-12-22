@@ -3,7 +3,6 @@
 <?= $this->section('page-content'); ?>
 <!-- Begin Page Content -->
 <div class="container-fluid">
-
     <!-- Page Heading -->
     <h1 class="h3 mb-4 text-gray-800">Daftar User</h1>
     <div class="row">
@@ -28,7 +27,6 @@
                         <th scope="col">Email</th>
                         <th scope="col">Role</th>
                         <th scope="col">Action</th>
-
                     </tr>
                 </thead>
                 <tbody>
@@ -36,18 +34,18 @@
                     <?php foreach ($users as $user) : ?>
                         <tr>
                             <th scope="row"><?= $i++; ?></th>
-                            <td><?= $user->username; ?></td>
-                            <td><?= $user->email; ?></td>
-                            <td><?= $user->name; ?></td>
+                            <td><?= $user['username']; ?></td>
+                            <td><?= $user['email']; ?></td>
+                            <td><?= $user['name']; ?></td>
                             <td>
-                                <a href="<?= base_url('admin/' . $user->userid); ?>" class="btn btn-info">Detail</a>
+                                <a href="<?= base_url('admin/' . $user['id']); ?>" class="btn btn-info">Detail</a>
                             </td>
 
                         </tr>
                     <?php endforeach; ?>
                 </tbody>
             </table>
-            <?= $pager->links('users', 'pagination'); ?>
+
         </div>
     </div>
 

@@ -120,13 +120,4 @@ class UserModel extends Model
 
         return $data;
     }
-
-    public function search($keyword)
-    {
-        return $this->table('users')->like('username', $keyword)->orLike('email', $keyword);
-    }
-
-    public function getUser()
-    {
-    }
 }

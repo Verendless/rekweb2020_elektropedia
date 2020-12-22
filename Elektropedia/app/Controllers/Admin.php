@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use Myth\Auth\Models\UserModel;
+use App\Models\ModelUser;
 
 class Admin extends BaseController
 {
@@ -11,7 +11,7 @@ class Admin extends BaseController
     {
         // $this->db = \Config\Database::connect();
         // $this->builder = $this->db->table('users');
-        $this->userModel = new UserModel();
+        $this->modelUser = new ModelUser();
     }
     public function index()
     {
@@ -35,18 +35,19 @@ class Admin extends BaseController
         // $data['users'] = $query->getResult();
 
         $currentPage = $this->request->getVar('page_produk') ? $this->request->getVar('page_produk') : 1;
-
+        // dd($this->request->getVar('keyword'));
         $keyword = $this->request->getVar('keyword');
         if ($keyword) {
-            $user = $this->userModel->search($keyword);
+            $user = $this->modelUser->search($keyword);
         } else {
-            $user = $this->userModel;
+            $user = $this->modelUser->getUserRole();
         }
 
         $data = [
             'title' => 'Daftar User',
-            'users' => $user->paginate(10, 'users'),
-            'pager' => $this->userModel->pager,
+            'users' => $user,
+            // 'pagination' => $user->paginate(10, 'users'),
+            'pager' => $this->modelUser->pager,
             'currentPage' => $currentPage
 
 

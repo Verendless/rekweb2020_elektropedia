@@ -18,8 +18,35 @@ class ProdukModel extends Model
         if ($idProduk == false) {
             return $this->findAll();
         }
-
         return $this->where(['idProduk' => $idProduk])->first();
+    }
+
+    public function getProdukLaptop()
+    {
+        $sql = "SELECT * FROM produk WHERE kategori = ?";
+        $result = $this->db->query($sql, ['laptop']);
+        return $result->getResultArray();
+    }
+
+    public function getProdukSmartphone()
+    {
+        $sql = "SELECT * FROM produk WHERE kategori = ?";
+        $result = $this->db->query($sql, ['smartphone']);
+        return $result->getResultArray();
+    }
+
+    public function getProdukKamera()
+    {
+        $sql = "SELECT * FROM produk WHERE kategori = ?";
+        $result = $this->db->query($sql, ['kamera']);
+        return $result->getResultArray();
+    }
+
+    public function getProdukAksesoris()
+    {
+        $sql = "SELECT * FROM produk WHERE kategori = ?";
+        $result = $this->db->query($sql, ['aksesoris']);
+        return $result->getResultArray();
     }
 
     public function search($keyword)

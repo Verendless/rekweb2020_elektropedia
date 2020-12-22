@@ -2,12 +2,25 @@
 
 namespace App\Controllers;
 
+use App\Models\ProdukModel;
+
 class Pages extends BaseController
 {
+
+    protected $produkModel;
+    public function __construct()
+    {
+        $this->produkModel = new ProdukModel();
+    }
     public function index()
     {
         $data = [
-            'title' => 'Elektropedia'
+            'title' => 'Elektropedia',
+            'produkLaptop' => $this->produkModel->getProdukLaptop(),
+            'produkSmartphone' => $this->produkModel->getProdukSmartphone(),
+            'produkKamera' => $this->produkModel->getProdukKamera(),
+            'produkAksesoris' => $this->produkModel->getProdukAksesoris(),
+
         ];
         return view('pages/home', $data);
     }
