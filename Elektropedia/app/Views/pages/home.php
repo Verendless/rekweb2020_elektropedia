@@ -35,14 +35,6 @@
 <section class="mt-4">
     <div class="container">
         <h4 class="mb-3">Laptop</h4>
-<<<<<<< Updated upstream
-        <div class="row mx-auto">
-            <div class="card mb-3 mx-auto shadow col-md-2">
-                <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
-                <div class="card-body">
-                    <p class="card-title">Laptop Test</p>
-                    <p class="card-text"><small>Rp 100.000,-</small></p>
-=======
         <div class="row d-flex justify-content-start">
             <?php foreach ($produkLaptop as $pl) : ?>
                 <div class="card mb-3 mx-3 shadow col-md-2">
@@ -53,7 +45,6 @@
                             <p class="card-text"><small>Rp <?= number_format($pl['harga']); ?>,-</small></p>
                         </div>
                     </a>
->>>>>>> Stashed changes
                 </div>
             </div>
             <div class="card mb-3 mx-auto shadow col-md-2">
@@ -93,22 +84,6 @@
 <!-- Smartphone Section -->
 <section class="mt-4">
     <div class="container">
-<<<<<<< Updated upstream
-        <h4 class="mb-3">Laptop</h4>
-        <div class="row mx-auto">
-            <div class="card mb-3 mx-auto shadow col-md-2">
-                <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
-                <div class="card-body">
-                    <p class="card-title">Laptop Test</p>
-                    <p class="card-text"><small>Rp 100.000,-</small></p>
-                </div>
-            </div>
-            <div class="card mb-3 mx-auto shadow col-md-2">
-                <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
-                <div class="card-body">
-                    <p class="card-title">Laptop Test</p>
-                    <p class="card-text"><small>Rp 100.000,-</small></p>
-=======
         <h4 class="mb-3">Smartphone</h4>
         <div class="row d-flex justify-content-start">
             <?php foreach ($produkSmartphone as $ps) : ?>
@@ -142,7 +117,6 @@
                             <p class="card-text"><small>Rp <?= number_format($pk['harga']); ?>,-</small></p>
                         </div>
                     </a>
->>>>>>> Stashed changes
                 </div>
             </div>
             <div class="card mb-3 mx-auto shadow col-md-2">
@@ -175,15 +149,6 @@
 <!-- Smartphone Section -->
 <section class="mt-4">
     <div class="container">
-<<<<<<< Updated upstream
-        <h4 class="mb-3">Laptop</h4>
-        <div class="row mx-auto">
-            <div class="card mb-3 mx-auto shadow col-md-2">
-                <img src="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg" class="card-img-top pt-4" alt="https://images.anandtech.com/doci/15680/Swift-3_SF314-42_front-facing.jpg">
-                <div class="card-body">
-                    <p class="card-title">Laptop Test</p>
-                    <p class="card-text"><small>Rp 100.000,-</small></p>
-=======
         <h4 class="mb-3">Aksesoris</h4>
         <div class="row d-flex justify-content-start">
             <?php foreach ($produkAksesoris as $pa) : ?>
@@ -195,7 +160,6 @@
                             <p class="card-text"><small>Rp <?= number_format($pa['harga']); ?>,-</small></p>
                         </div>
                     </a>
->>>>>>> Stashed changes
                 </div>
             </div>
             <div class="card mb-3 mx-auto shadow col-md-2">
@@ -231,5 +195,4 @@
     </div>
 </section>
 <div class="mb-md-2"></div>
-
-<?= $this->endSection(); ?>
+<?= this; ?>
