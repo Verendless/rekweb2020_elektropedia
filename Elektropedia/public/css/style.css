@@ -45,3 +45,8 @@ footer.sticky-footer {
 .gambarProduk {
   width: 100px !important;
 }
+
+ul.linkProduk li {
+  display: inline;
+  text-decoration: none;
+}

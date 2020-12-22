@@ -37,6 +37,7 @@ $routes->get('/', 'User::index');
 $routes->get('/produk/create', 'Produk::create');
 $routes->get('/produk/edit/(:segment)', 'Produk::edit/$1');
 $routes->delete('/produk/(:num)', 'Produk::delete/$1');
+$routes->get('/produk/(:any)', 'Produk::detail/$1');
 
 
 // // route since we don't have to scan directories.

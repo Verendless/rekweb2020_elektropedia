@@ -35,20 +35,20 @@ class Produk extends BaseController
         return view('produk/index', $data);
     }
 
-    // public function detail($idBarang = 0)
-    // {
+    public function detail($namaBarang)
+    {
 
-    //     $data = [
-    //         'title' => 'Produk',
-    //         'produk' => $this->produkModel->getProduk($idBarang)
+        $data = [
+            'title' => $namaBarang,
+            'produk' => $this->produkModel->getProduk($namaBarang)
 
-    //     ];
-    //     if (empty($data['produk'])) {
+        ];
+        if (empty($data['produk'])) {
 
-    //         return redirect()->to('/produk');
-    //     }
-    //     return view('produk/detail', $data);
-    // }
+            return redirect()->to('/produk');
+        }
+        return view('produk/detail', $data);
+    }
 
     public function create()
     {

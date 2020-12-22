@@ -13,12 +13,12 @@ class ProdukModel extends Model
     protected $updatedField = 'tanggalEdit';
     protected $allowedFields = ['idProduk', 'nama', 'kategori', 'deskripsi', 'berat', 'harga', 'stok', 'gambar'];
 
-    public function getProduk($idProduk = false)
+    public function getProduk($namaBarang = false)
     {
-        if ($idProduk == false) {
+        if ($namaBarang == false) {
             return $this->findAll();
         }
-        return $this->where(['idProduk' => $idProduk])->first();
+        return $this->where(['nama' => $namaBarang])->first();
     }
 
     public function getProdukLaptop()
