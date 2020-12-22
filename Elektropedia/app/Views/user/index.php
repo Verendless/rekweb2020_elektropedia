@@ -25,13 +25,13 @@
                 <div class="form-group row">
                     <label for="staticEmail" class="col-sm-2 col-form-label">Full Name</label>
                     <div class="col-sm-10">
-                        <input type="text" disabled class="form-control-plaintext" id="staticEmail" value="<?= user()->fullname != null ? user()->fullname : '-'; ?>">
+                        <input type="text" disabled class="form-control-plaintext" id="staticEmail" value="<?= $user['fullname'] != null ? $user['fullname'] : '-'; ?>">
                     </div>
                 </div>
                 <div class="form-group row">
                     <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="text" disabled class="form-control-plaintext" id="staticEmail" value="<?= user()->email; ?>">
+                        <input type="text" disabled class="form-control-plaintext" id="staticEmail" value="<?= $user['email']; ?>">
                     </div>
                 </div>
                 <h4>Detail Alamat</h4>

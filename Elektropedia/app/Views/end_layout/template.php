@@ -132,6 +132,7 @@
     <script>
         function previewImg() {
             const sampul = document.querySelector('#gambar');
+            // const sampulLabel = document.querySelector('.custom-file-label');
             const sampulLabel = document.querySelector('.custom-file-label');
             const imgPreview = document.querySelector('.img-preview');
 
