@@ -83,12 +83,13 @@ class User extends BaseController
             'email' => $this->request->getVar('email'),
             'username' => $this->request->getVar('username'),
             'fullname' => $this->request->getVar('fullname'),
+            'noTelp' => $this->request->getVar('noTelp'),
             'user_image' => $namaGambar,
 
         ]);
 
         session()->setFlashData('pesan', 'Data Berhasil Diupdate.');
-        return redirect()->to('/user');
+        return redirect()->to('/user/profile/' . $this->request->getVar('username'));
     }
 
     //--------------------------------------------------------------------

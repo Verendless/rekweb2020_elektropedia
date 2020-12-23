@@ -8,7 +8,7 @@ class ModelUser extends Model
 {
     protected $table = 'users';
     protected $userTimestamps = true;
-    protected $allowedFields = ['id', 'email', 'username', 'fullname', 'user_image'];
+    protected $allowedFields = ['id', 'email', 'username', 'fullname', 'noTelp', 'user_image'];
 
     public function getUser()
     {
@@ -49,13 +49,4 @@ class ModelUser extends Model
         $result = $this->db->query($sql);
         return $result->getResultArray();
     }
-
-    // public function getUserRole()
-    // {
-    //     return $this->select('*')
-    //         ->from('auth_groups, users')
-    //         ->join('auth_groups_users', 'auth_groups.id = auth_groups_users.group_id')
-    //         ->where('users.id = auth_groups_users.user_id')
-    //         ->findAll();
-    // }
 }

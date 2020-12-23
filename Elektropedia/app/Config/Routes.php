@@ -41,6 +41,7 @@ $routes->get('/produk/edit/(:segment)', 'Produk::edit/$1');
 $routes->get('/user/edit/(:segment)', 'User::edit/$1');
 $routes->delete('/produk/(:num)', 'Produk::delete/$1');
 $routes->get('/produk/(:any)/(:any)', 'Produk::detail/$1/$2');
+$routes->get('/transaksi/beliLangsung/(:any)/(:any)', 'Transaksi::beliLangsung/$1/$2');
 
 
 // // route since we don't have to scan directories.

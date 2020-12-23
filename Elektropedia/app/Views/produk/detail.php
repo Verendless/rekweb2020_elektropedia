@@ -24,7 +24,7 @@
             <div class="form-group row">
                 <label class="col-md-2 col-sm-1 col-form-label">Harga</label>
                 <div class="col-md-10 col-sm-2">
-                    <input type="text" disabled class="form-control-plaintext" value="Rp <?= number_format($produk['harga']); ?>,-">
+                    <input type="text" disabled class="form-control-plaintext" value="Rp<?= number_format($produk['harga']); ?>,-">
                 </div>
             </div>
             <div class="form-group row">
@@ -52,7 +52,8 @@
             <hr>
             <?php if (!in_groups('Admin')) : ?>
                 <button class="btn-keranjang"><i class="fa fa-shopping-cart"></i> Tambah Ke Keranjang</button>
-                <button class="btn-beli  ml-5"> Beli Sekarang</button>
+                <a href="/transaksi/beliLangsung/<?= $produk['nama']; ?>/<?= user_id(); ?>"><button class="btn-beli ml-5"> Beli Sekarang</button></a>
+
                 <hr>
             <?php endif; ?>
 
@@ -94,7 +95,7 @@
 <section class="mt-4">
     <div class="container">
         <hr>
-        <h4 class="mb-3">Produk Lain Yang Mungkin Kamu Suka</h4>
+        <h4 class="mb-3">Produk Lain` Yang Mungkin Kamu Suka</h4>
         <div class="row d-flex justify-content-start">
             <?php $i = 0 ?>
             <?php foreach ($produkLain as $rp) : ?>

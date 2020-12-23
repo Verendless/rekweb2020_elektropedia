@@ -50,7 +50,13 @@
                 <div class="form-group row">
                     <label for="email" class="col-sm-2 col-form-label">Email</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" id="email" name="email" value="<?= $user['email']; ?>">
+                        <input type="email" class="form-control" id="email" name="email" value="<?= $user['email']; ?>">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="noTelp" class="col-sm-2 col-form-label">Nomor Telefon</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="noTelp" name="noTelp" value="<?= $user['noTelp']; ?>">
                     </div>
                 </div>
                 <h4>Ubah Detail Alamat</h4>
