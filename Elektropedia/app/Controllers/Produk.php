@@ -15,6 +15,35 @@ class Produk extends BaseController
     }
     public function index()
     {
+        // $currentPage = $this->request->getVar('page_produk') ? $this->request->getVar('page_produk') : 1;
+
+        // $keyword = $this->request->getVar('keyword');
+        // if ($keyword) {
+        //     $produk = $this->produkModel->search($keyword);
+        // } else {
+        //     $produk = $this->produkModel;
+        // }
+
+        $data = [
+            'title' => 'Produk',
+            'produk' => $this->produkModel->getProductById(),
+            // 'currentPage' => $currentPage
+
+
+        ];
+        return view('produk/index', $data);
+    }
+
+    public function daftarProduk()
+    {
+        // $data = [
+        //     'title' => "Laptop",
+        //     'produkLaptop' => $this->produkModel->getProdukByCategory('laptop'),
+        // ];
+
+        // return view('produk/laptop', $data);
+
+
         $currentPage = $this->request->getVar('page_produk') ? $this->request->getVar('page_produk') : 1;
 
         $keyword = $this->request->getVar('keyword');
@@ -32,18 +61,48 @@ class Produk extends BaseController
 
 
         ];
-        return view('produk/index', $data);
+        return view('produk/daftar_produk', $data);
     }
 
-    public function laptop()
+    public function kategori($kategori)
     {
         $data = [
-            'title' => "Laptop",
-            'produkLaptop' => $this->produkModel->getProdukByCategory('laptop'),
+            'title' => $kategori,
+            'produk' => $this->produkModel->getProdukByCategory($kategori),
         ];
 
-        return view('produk/laptop', $data);
+        return view('produk/kategori_produk', $data);
     }
+
+    // public function laptop()
+    // {
+    //     $data = [
+    //         'title' => "Laptop",
+    //         'produk' => $this->produkModel->getProdukByCategory('laptop'),
+    //     ];
+
+    //     return view('produk/laptop', $data);
+    // }
+
+    // public function smartphone()
+    // {
+    //     $data = [
+    //         'title' => "Smartphone",
+    //         'produk' => $this->produkModel->getProdukByCategory('smartphone'),
+    //     ];
+
+    //     return view('produk/laptop', $data);
+    // }
+
+    // public function produk($kategori)
+    // {
+    //     $data = [
+    //         'title' => $kategori,
+    //         'produk' => $this->produkModel->getProdukByCategory($kategori),
+    //     ];
+
+    //     return view('produk/produk', $data);
+    // }
 
     public function detail($kategori, $namaBarang)
     {
@@ -52,6 +111,7 @@ class Produk extends BaseController
             'title' => $namaBarang,
             'produk' => $this->produkModel->getProdukByNama($namaBarang),
             'relevanProduk' => $this->produkModel->getProdukByCategory($kategori),
+            'produkLain' => $this->produkModel->getProductById(),
 
         ];
         if (empty($data['produk'])) {
@@ -159,7 +219,7 @@ class Produk extends BaseController
         ]);
 
         session()->setFlashData('pesan', 'Data Berhasil Ditambahkan.');
-        return redirect()->to('/produk');
+        return redirect()->to('/produk/daftarProduk');
     }
 
     public function delete($idProduk)
@@ -176,7 +236,7 @@ class Produk extends BaseController
         $this->produkModel->delete($idProduk);
         session()->setFlashdata('pesan', 'Data berhasil dihapus.');
 
-        return redirect()->to('/produk');
+        return redirect()->to('/produk/daftarProduk');
     }
 
     public function edit($idProduk)
@@ -284,7 +344,7 @@ class Produk extends BaseController
         ]);
 
         session()->setFlashData('pesan', 'Data Berhasil Diupdate.');
-        return redirect()->to('/produk');
+        return redirect()->to('/produk/daftarProduk');
     }
 
 

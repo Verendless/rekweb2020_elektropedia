@@ -14,15 +14,15 @@
                         Kategori
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item py-0 text-dark" href="#">Semua Kategori</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/">Semua Kategori</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="">Laptop</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/laptop">Laptop</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="#">Smartphone</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/smartphone">Smartphone</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="#">Camera</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/kamera">Camera</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="#">Accessories</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/aksesoris">Accessories</a>
                     </div>
                 </li>
             </ul>
@@ -40,7 +40,7 @@
                                 <path fill-rule=" evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
                             </svg>
                         </a>
-                        <a class="nav-link pl-sm-0  mx-md-auto text-dark" href="<?= base_url(); ?>/user/<?= user()->user_id; ?>"><?= user()->username; ?></a>
+                        <a class="nav-link pl-sm-0  mx-md-auto text-dark" href="<?= base_url(); ?>/user/profile/<?= user()->username; ?>"><?= user()->username; ?></a>
                     <?php endif ?>
                     <a class="nav-link pl-sm-0 mx-md-auto text-dark" href="/logout">Logout</a>
                 <?php else : ?>

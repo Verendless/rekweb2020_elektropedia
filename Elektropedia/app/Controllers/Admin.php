@@ -3,20 +3,23 @@
 namespace App\Controllers;
 
 use App\Models\ModelUser;
+use App\Models\ProdukModel;
 
 class Admin extends BaseController
 {
-    // protected $db, $builder;
+    protected $modelUser;
+    protected $produkModel;
     public function __construct()
     {
-        // $this->db = \Config\Database::connect();
-        // $this->builder = $this->db->table('users');
         $this->modelUser = new ModelUser();
+        $this->produkModel = new ProdukModel();
     }
     public function index()
     {
         $data = [
-            'title' => 'Admin Dashboard'
+            'title' => 'Admin Dashboard',
+            'user' => $this->modelUser->getUser(),
+            'produk' => $this->produkModel->getProductById(),
         ];
         return view('admin/index', $data);
     }
@@ -35,7 +38,6 @@ class Admin extends BaseController
         // $data['users'] = $query->getResult();
 
         $currentPage = $this->request->getVar('page_produk') ? $this->request->getVar('page_produk') : 1;
-        // dd($this->request->getVar('keyword'));
         $keyword = $this->request->getVar('keyword');
         if ($keyword) {
             $user = $this->modelUser->search($keyword);
@@ -54,32 +56,6 @@ class Admin extends BaseController
         ];
         return view('admin/user', $data);
     }
-
-
-    // public function detail($id = 0)
-    // {
-    //     $data['title'] = 'Daftar User';
-
-    //     // $users = new \Myth\Auth\Models\UserModel();
-    //     // $data['users'] = $users->findAll();
-
-    //     $this->builder->select('users.id as userid,username,email,fullname,user_image,name');
-    //     $this->builder->join('auth_groups_users', 'auth_groups_users.user_id = users.id');
-    //     $this->builder->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id');
-    //     $this->builder->where('users.id', $id);
-    //     $query = $this->builder->get();
-    //     $data['users'] = $query->getRow();
-
-    //     if (empty($data['users'])) {
-    //         return redirect()->to('/admin');
-    //     }
-
-    //     return view('admin/detail', $data);
-    // }
-
-
-
-
 
     //--------------------------------------------------------------------
 

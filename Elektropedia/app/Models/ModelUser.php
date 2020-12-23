@@ -12,16 +12,22 @@ class ModelUser extends Model
 
     public function getUser()
     {
-        $id = user_id();
-        return $this->where('id', $id)->first();
+        // $id = user_id();
+        // return $this->where('id', $id)->first();
+        return $this->findAll();
     }
 
-    public function getUserById($id = false)
+    public function getUserById($id)
     {
-        if ($id == false) {
-            return $this->findAll();
-        }
         return $this->where(['id' => $id])->first();
+    }
+
+    public function getUserByUsername($username)
+    {
+        // if ($id == false) {
+        //     return $this->findAll();
+        // }
+        return $this->where(['username' => $username])->first();
     }
 
     public function search($keyword)

@@ -50,3 +50,7 @@ ul.linkProduk li {
   display: inline;
   text-decoration: none;
 }
+
+ul.produk li {
+  text-decoration: none;
+}

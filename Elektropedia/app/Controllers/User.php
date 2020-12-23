@@ -12,13 +12,13 @@ class User extends BaseController
         $this->modelUser = new ModelUser();
     }
 
-    public function index()
+    public function profile($username)
     {
         $data = [
-            'title' => 'My Profile',
-            'user' => $this->modelUser->getUser(),
+            'title' => 'Profile ' . $username,
+            'user' => $this->modelUser->getUserByUsername($username),
         ];
-        return view('user/index', $data);
+        return view('user/profile', $data);
     }
 
     public function edit($id)

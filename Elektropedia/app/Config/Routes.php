@@ -32,9 +32,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
-$routes->get('/', 'User::index');
+$routes->get('/', 'Produk::index');
 
-$routes->get('/produk/laptop', 'Produk::laptop');
+// $routes->get('/produk/laptop', 'Produk::laptop');
+$routes->get('/produk/kategori/(:segment)', 'Produk::kategori/$1');
 $routes->get('/produk/create', 'Produk::create');
 $routes->get('/produk/edit/(:segment)', 'Produk::edit/$1');
 $routes->get('/user/edit/(:segment)', 'User::edit/$1');

@@ -69,7 +69,7 @@
 
         <!-- Nav Item - Menu Produk -->
         <li class="nav-item">
-            <a class="nav-link" href="<?= base_url(); ?>/produk">
+            <a class="nav-link" href="<?= base_url(); ?>/produk/daftarProduk">
                 <i class="fas fa-laptop"></i>
                 <span>Produk</span>
             </a>
@@ -137,7 +137,7 @@
 
         <!-- Nav Item - Menu Penjualan -->
         <li class="nav-item">
-            <a class="nav-link" href="/user">
+            <a class="nav-link" href="/user/profile/<?= user()->username ?>">
                 <i class="fas fa-user"></i>
                 <span>My Profile</span>
             </a>

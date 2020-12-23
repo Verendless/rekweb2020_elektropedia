@@ -3,7 +3,7 @@
 <?= $this->section('content'); ?>
 <!-- Begin Page Content -->
 <div class="container">
-    <h1 class="my-md-5">All Produk</h1>
+    <h1 class="my-md-5 text-capitalize"><?= $title; ?></h1>
     <div class="row">
         <div class="col-md-2">
             <p>Filter</p>

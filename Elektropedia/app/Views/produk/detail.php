@@ -66,15 +66,17 @@
         <p class="mt-2 "><?= $produk['deskripsi']; ?></p>
     </div>
 </div>
+
 <section class="mt-4">
     <div class="container">
         <hr>
         <h4 class="mb-3">Produk Terkait</h4>
         <div class="row d-flex justify-content-start">
+            <?php $i = 0 ?>
             <?php foreach ($relevanProduk as $rp) : ?>
-                <?php if ($rp['idProduk'] != $produk['idProduk']) : ?>
+                <?php if ($rp['idProduk'] != $produk['idProduk']  && $i < 5) : ?>
                     <div class="card mb-3 mx-3 shadow col-md-2">
-                        <a href="/produk/<?= $rp['nama']; ?>" class="text-decoration-none text-body">
+                        <a href="/produk/<?= $rp['kategori']; ?>/<?= $rp['nama']; ?>" class="text-decoration-none text-body">
                             <img src="/img/<?= $rp['gambar']; ?>" class="card-img-top pt-4" alt="<?= $rp['nama']; ?>">
                             <div class="card-body">
                                 <p class="card-title"><?= $rp['nama']; ?></p>
@@ -82,6 +84,31 @@
                             </div>
                         </a>
                     </div>
+                    <?php $i++ ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+    </div>
+</section>
+
+<section class="mt-4">
+    <div class="container">
+        <hr>
+        <h4 class="mb-3">Produk Lain Yang Mungkin Kamu Suka</h4>
+        <div class="row d-flex justify-content-start">
+            <?php $i = 0 ?>
+            <?php foreach ($produkLain as $rp) : ?>
+                <?php if ($rp['kategori'] != $produk['kategori'] && $i < 5) : ?>
+                    <div class="card mb-3 mx-3 shadow col-md-2">
+                        <a href="/produk/<?= $rp['kategori']; ?>/<?= $rp['nama']; ?>" class="text-decoration-none text-body">
+                            <img src="/img/<?= $rp['gambar']; ?>" class="card-img-top pt-4" alt="<?= $rp['nama']; ?>">
+                            <div class="card-body">
+                                <p class="card-title"><?= $rp['nama']; ?></p>
+                                <p class="card-text"><small>Rp <?= number_format($rp['harga']); ?>,-</small></p>
+                            </div>
+                        </a>
+                    </div>
+                    <?php $i++ ?>
                 <?php endif; ?>
             <?php endforeach; ?>
         </div>
