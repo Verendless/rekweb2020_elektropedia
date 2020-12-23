@@ -14,16 +14,27 @@ class Pages extends BaseController
     }
     public function index()
     {
-        $data = [
-            'title' => 'Elektropedia',
-            'produkLaptop' => $this->produkModel->getProdukByCategory('laptop'),
-            'produkSmartphone' => $this->produkModel->getProdukByCategory('smartphone'),
-            'produkKamera' => $this->produkModel->getProdukByCategory('kamera'),
-            'produkAksesoris' => $this->produkModel->getProdukByCategory('aksesoris'),
+        $keyword = $this->request->getVar('keyword');
+        if ($keyword) {
+            $produk = $this->produkModel->search($keyword);
+            $data = [
+                'title' => 'Produk',
+                'produk' => $produk,
+            ];
+            return view('produk/index', $data);
+        } else {
+            $data = [
+                'title' => 'Elektropedia',
+                'produkLaptop' => $this->produkModel->getProdukByCategory('laptop'),
+                'produkSmartphone' => $this->produkModel->getProdukByCategory('smartphone'),
+                'produkKamera' => $this->produkModel->getProdukByCategory('kamera'),
+                'produkAksesoris' => $this->produkModel->getProdukByCategory('aksesoris'),
 
-        ];
-        return view('pages/home', $data);
+            ];
+            return view('pages/home', $data);
+        }
     }
+
 
     public function about()
     {

@@ -38,6 +38,13 @@ class ProdukModel extends Model
 
     public function search($keyword)
     {
-        return $this->table('produk')->like('nama', $keyword)->orLike('kategori', $keyword);
+        $sql = "SELECT * FROM produk WHERE kategori LIKE ? OR nama LIKE ?";
+        $result = $this->db->query($sql, ['%' . $keyword . '%', '%' . $keyword . '%']);
+        return $result->getResultArray();
     }
+
+    // public function search($keyword)
+    // {
+    //     return $this->table('produk')->like('nama', $keyword)->orLike('kategori', $keyword);
+    // }
 }

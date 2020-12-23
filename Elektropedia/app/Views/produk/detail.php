@@ -8,7 +8,7 @@
     <ul class="linkProduk">
         <li><a href="/">Home</a></li>
         <li><i class="fas fa-caret-right mx-md-1" style="color: grey;"></i></li>
-        <li><a href="/produk/laptop"><?= $produk['kategori']; ?></a></li>
+        <li><a href="/produk/kategori/<?= $produk['kategori']; ?>"><?= $produk['kategori']; ?></a></li>
         <li><i class="fas fa-caret-right mx-md-1" style="color: grey;"></i></li>
         <li><?= $produk['nama']; ?></li>
     </ul>

@@ -16,19 +16,19 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item py-0 text-dark" href="/produk/">Semua Kategori</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/laptop">Laptop</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/Laptop">Laptop</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/smartphone">Smartphone</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/Smartphone">Smartphone</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/kamera">Camera</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/Kamera">Camera</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/aksesoris">Accessories</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/Aksesoris">Accessories</a>
                     </div>
                 </li>
             </ul>
             <div class="navbar-nav col-md-11 col-sm-12 mx-md-auto">
-                <form class="form-inline my-sm-2 my-md-0 ml-md-2 mr-md-0 col-md-9 col-sm-1 d-flex justify-content-center-md"">
-                <input class=" form-control form-control-sm mr-sm-2 col-md-10 col-sm-0" type="search" placeholder="Search" aria-label="Search">
+                <form class="form-inline my-sm-2 my-md-0 ml-md-2 mr-md-0 col-md-9 col-sm-1 d-flex justify-content-center-md" action="<?= base_url(); ?>/search" method="post">
+                    <input class=" form-control form-control-sm mr-sm-2 col-md-10 col-sm-0" type="search" placeholder="Search" name="keyword" aria-label="Search">
                     <button class="btn btn-sm btn-outline-primary my-2 my-sm-0 col-md-1.5 col-sm-0" type="submit">Search</button>
                 </form>
                 <?php if (logged_in()) : ?>

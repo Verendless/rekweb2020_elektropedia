@@ -16,18 +16,9 @@ class Produk extends BaseController
     public function index()
     {
         // $currentPage = $this->request->getVar('page_produk') ? $this->request->getVar('page_produk') : 1;
-
-        // $keyword = $this->request->getVar('keyword');
-        // if ($keyword) {
-        //     $produk = $this->produkModel->search($keyword);
-        // } else {
-        //     $produk = $this->produkModel;
-        // }
-
         $data = [
             'title' => 'Produk',
             'produk' => $this->produkModel->getProductById(),
-            // 'currentPage' => $currentPage
 
 
         ];
@@ -36,14 +27,6 @@ class Produk extends BaseController
 
     public function daftarProduk()
     {
-        // $data = [
-        //     'title' => "Laptop",
-        //     'produkLaptop' => $this->produkModel->getProdukByCategory('laptop'),
-        // ];
-
-        // return view('produk/laptop', $data);
-
-
         $currentPage = $this->request->getVar('page_produk') ? $this->request->getVar('page_produk') : 1;
 
         $keyword = $this->request->getVar('keyword');
@@ -66,6 +49,12 @@ class Produk extends BaseController
 
     public function kategori($kategori)
     {
+        // $data = [
+        //     'title' => $kategori,
+        //     'produk' => $this->produkModel->getProdukByCategory($kategori),
+        // ];
+
+        // return view('produk/kategori_produk', $data);
         $data = [
             'title' => $kategori,
             'produk' => $this->produkModel->getProdukByCategory($kategori),
