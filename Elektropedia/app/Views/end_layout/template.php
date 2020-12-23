@@ -41,11 +41,9 @@
                     <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
                         <i class="fa fa-bars"></i>
                     </button>
-
-
                     <!-- Topbar Navbar -->
                     <ul class="navbar-nav ml-auto">
-                        <li class="nav-item pt-md-4">
+                        <li class="nav-item pt-4">
                             <a>
                                 <a><?= date('d-m-Y') ?></a>
                             </a>
@@ -65,7 +63,7 @@
                                         Main Menu
                                     </a>
                                 <?php else : ?>
-                                    <a class="dropdown-item" href="/user/">
+                                    <a class="dropdown-item" href="/user/profile/<?= user()->username; ?>">
                                         <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                                         My Profile
                                     </a>

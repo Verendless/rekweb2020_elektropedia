@@ -15,16 +15,17 @@
                 <img class="d-block w-100" height="300" src="\img\home.png" alt="First slide">
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" height="300" src="\img\laptop.png" alt="Second slide">
+                <a href="/produk/kategori/laptop"><img class="d-block w-100" height="300" src="\img\laptop.png" alt="Second slide"></a>
+
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" height="300" src="\img\camera.png" alt="Third slide">
+                <a href="/produk/kategori/kamera"><img class="d-block w-100" height="300" src="\img\camera.png" alt="Third slide"></a>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" height="300" src="\img\smartphones.png" alt="Third slide">
+                <a href="/produk/kategori/smartphone"><img class="d-block w-100" height="300" src="\img\smartphones.png" alt="Third slide"></a>
             </div>
             <div class="carousel-item">
-                <img class="d-block w-100" height="300" src="\img\accessories.png" alt="Third slide">
+                <a href="/produk/kategori/aksesoris"><img class="d-block w-100" height="300" src="\img\accessories.png" alt="Third slide"></a>
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -56,7 +57,7 @@
                 </div>
             <?php endforeach ?>
         </div>
-        <a href="/produk/laptop" class="btn btn-primary">See More!</a>
+        <a href="/produk/kategori/laptop" class="btn btn-primary">See More!</a>
         <hr>
     </div>
 </section>
@@ -78,7 +79,7 @@
                 </div>
             <?php endforeach ?>
         </div>
-        <a href="" class="btn btn-primary">See More!</a>
+        <a href="/produk/kategori/smartphone" class="btn btn-primary">See More!</a>
         <hr>
     </div>
 </section>
@@ -100,7 +101,7 @@
                 </div>
             <?php endforeach ?>
         </div>
-        <a href="" class="btn btn-primary">See More!</a>
+        <a href="/produk/kategori/kamera" class="btn btn-primary">See More!</a>
         <hr>
     </div>
 </section>
@@ -122,8 +123,7 @@
                 </div>
             <?php endforeach ?>
         </div>
-        <a href="" class="btn btn-primary">See More!</a>
-        <hr>
+        <a href="/produk/kategori/aksesoris" class="btn btn-primary">See More!</a>
     </div>
 </section>
 <div class="mb-md-2"></div>

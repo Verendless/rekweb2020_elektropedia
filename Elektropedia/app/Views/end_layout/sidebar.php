@@ -118,7 +118,7 @@
     </ul>
 <?php elseif (in_groups('User')) : ?>
     <!-- User Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+    <ul class="navbar-nav bg-gradient-info sidebar sidebar-dark accordion" id="accordionSidebar">
 
         <!-- Sidebar - Brand -->
         <a class="sidebar-brand d-flex align-items-center justify-content-center" href="/">
@@ -129,7 +129,7 @@
         </a>
 
         <!-- Divider -->
-        <hr class="sidebar-divider my-0">
+        <hr class="sidebar-divider">
 
         <div class="sidebar-heading">
             Profile
@@ -156,7 +156,7 @@
 
         <!-- Heading -->
         <div class="sidebar-heading">
-            Produk
+            Transaksi
         </div>
 
         <!-- Nav Item - Menu Produk -->

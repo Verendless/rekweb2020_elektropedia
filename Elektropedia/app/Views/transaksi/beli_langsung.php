@@ -94,8 +94,8 @@
                 </div>
             </form>
         </div>
-        <div class="col-md-4 offset-md-1">
-            <div class="card" style="width: 18rem;">
+        <div class="col-md-4 offset-md-1 col-sm-12">
+            <div class="card">
                 <div class="card-body">
                     <h5 class="card-title font-weight-bold">Ringkasan Pembelian</h5>
                     <table class="table">

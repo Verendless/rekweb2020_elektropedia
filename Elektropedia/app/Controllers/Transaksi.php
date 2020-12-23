@@ -14,6 +14,7 @@ class Transaksi extends BaseController
         $this->produkModel = new ProdukModel();
         $this->modelUser = new ModelUser();
     }
+
     public function beliLangsung($namaProduk, $user)
     {
         $data = [
@@ -22,6 +23,15 @@ class Transaksi extends BaseController
             'user' => $this->modelUser->getUserById($user),
         ];
         return view('transaksi/beli_langsung', $data);
+    }
+
+    public function cart()
+    {
+        $data = [
+            'title' => 'Cart',
+
+        ];
+        return view('transaksi/cart', $data);
     }
     //--------------------------------------------------------------------
 

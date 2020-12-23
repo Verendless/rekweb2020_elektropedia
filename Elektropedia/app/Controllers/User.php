@@ -37,7 +37,7 @@ class User extends BaseController
         if ($userLama['username'] == $this->request->getVar('username')) {
             $rule_nama = 'required';
         } else {
-            $rule_nama = 'required|is_unique[produk.nama]';
+            $rule_nama = 'required|is_unique[users.username]';
         }
 
         //validasi input
@@ -45,8 +45,8 @@ class User extends BaseController
             'username' => [
                 'rules' => $rule_nama,
                 'errors' => [
-                    'required' => '{field} Produk harus diisi',
-                    'is_unique' => '{field} Produk sudah terdaftar'
+                    'required' => '{field} harus diisi',
+                    'is_unique' => '{field} sudah terdaftar'
                 ]
             ],
             'gambar' => [

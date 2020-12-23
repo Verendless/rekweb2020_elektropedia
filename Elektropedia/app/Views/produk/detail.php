@@ -95,7 +95,7 @@
 <section class="mt-4">
     <div class="container">
         <hr>
-        <h4 class="mb-3">Produk Lain` Yang Mungkin Kamu Suka</h4>
+        <h4 class="mb-3">Produk Lain Yang Mungkin Kamu Suka</h4>
         <div class="row d-flex justify-content-start">
             <?php $i = 0 ?>
             <?php foreach ($produkLain as $rp) : ?>
