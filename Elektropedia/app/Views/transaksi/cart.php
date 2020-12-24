@@ -39,19 +39,22 @@
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title font-weight-bold">Ringkasan Pembelian</h5>
-                    <table class="table table-borderless">
-                        <tr>
-                            <td>Ongkir</td>
-                            <td>Rp15.000,-</td>
-                        </tr>
-                        <tr>
-                            <?php foreach ($totalHarga as $th) : ?>
-                                <td class="font-weight-bold">Total harga</td>
-                                <td>Rp<?= number_format($th['totalHarga']); ?>.-</td>
-                            <?php endforeach; ?>
-                        </tr>
-                    </table>
-                    <button type="submit" class="btn btn-primary btn-block">Beli</button>
+                    <form action="/cart/checkout/<?= user()->username; ?>" method="post">
+                        <?= csrf_field(); ?>
+                        <table class="table table-borderless">
+                            <tr>
+                                <td>Ongkir</td>
+                                <td>Rp15.000,-</td>
+                            </tr>
+                            <tr>
+                                <?php foreach ($totalHarga as $th) : ?>
+                                    <td class="font-weight-bold">Total Harga</td>
+                                    <td>Rp<?= number_format($th['totalHarga']); ?>.-</td>
+                                <?php endforeach; ?>
+                            </tr>
+                        </table>
+                        <button type="submit" class="btn btn-primary btn-block">Checkout</button>
+                    </form>
                 </div>
             </div>
         </div>

@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\CartModel;
+use App\Models\ModelUser;
 
 class Cart extends BaseController
 {
@@ -10,6 +11,7 @@ class Cart extends BaseController
     public function __construct()
     {
         $this->cartModel = new CartModel();
+        $this->modelUser = new ModelUser();
     }
 
     public function index($username)
@@ -21,6 +23,18 @@ class Cart extends BaseController
 
         ];
         return view('transaksi/cart', $data);
+    }
+
+    public function checkout($username)
+    {
+        $data = [
+            'title' => 'Checkout',
+            'items' => $this->cartModel->getData($username),
+            'totalHarga' => $this->cartModel->getTotalHarga($username),
+            'user' => $this->modelUser->getUserByUsername($username),
+
+        ];
+        return view('transaksi/checkout', $data);
     }
 
     public function save($idUser)
