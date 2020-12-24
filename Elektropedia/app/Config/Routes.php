@@ -35,12 +35,16 @@ $routes->get('/', 'Pages::index');
 // $routes->get('/(:any)', 'Pages::index');
 // $routes->get('/', 'Produk::index');
 
-$routes->get('/produk/kategori/(:any)', 'Produk::kategori/$1');
+
+// $routes->get('/produk/kategori/(:any)', 'Produk::kategori/$1');
 $routes->get('/produk/create', 'Produk::create');
+$routes->get('/produk/(:segment)', 'Produk::index/$1');
 $routes->get('/produk/edit/(:segment)', 'Produk::edit/$1');
 $routes->get('/user/edit/(:segment)', 'User::edit/$1');
 $routes->delete('/produk/(:num)', 'Produk::delete/$1');
-$routes->get('/produk/(:any)/(:any)', 'Produk::detail/$1/$2');
+$routes->delete('/cart/(:num)/(:segment)', 'Produk::delete/$1/$2');
+$routes->get('/produk/(:segment)/(:segment)', 'Produk::detail/$1/$2');
+$routes->get('/cart/(:segment)', 'Cart::index/$1');
 $routes->get('/transaksi/beliLangsung/(:any)/(:any)', 'Transaksi::beliLangsung/$1/$2');
 
 

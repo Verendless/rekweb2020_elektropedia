@@ -16,6 +16,7 @@ class Search extends BaseController
         $keyword = $this->request->getVar('keyword');
         if ($keyword) {
             $produk = $this->produkModel->search($keyword);
+            $produkLain = $this->produkModel->getProductById();
             $title = $keyword;
         } else {
             $produk = $this->produkModel->getProductById();
@@ -24,8 +25,9 @@ class Search extends BaseController
         $data = [
             'title' => $title,
             'produk' => $produk,
+            'produkLain' => $produkLain,
         ];
-        return view('produk/search', $data);
+        return view('produk/index', $data);
     }
     //--------------------------------------------------------------------
 }

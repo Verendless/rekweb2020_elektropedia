@@ -13,12 +13,20 @@ class Produk extends BaseController
     {
         $this->produkModel = new ProdukModel();
     }
-    public function index()
+
+    public function index($kategori = null)
     {
-        // $currentPage = $this->request->getVar('page_produk') ? $this->request->getVar('page_produk') : 1;
+        if ($kategori) {
+            $title = $kategori;
+            $produk = $this->produkModel->getProdukByCategory($kategori);
+        } else {
+            $title = 'Semua Produk';
+            $produk = $this->produkModel->getProductById();
+        }
+
         $data = [
-            'title' => 'Produk',
-            'produk' => $this->produkModel->getProductById(),
+            'title' => $title,
+            'produk' => $produk,
 
 
         ];
@@ -47,51 +55,16 @@ class Produk extends BaseController
         return view('produk/daftar_produk', $data);
     }
 
-    public function kategori($kategori)
-    {
-        // $data = [
-        //     'title' => $kategori,
-        //     'produk' => $this->produkModel->getProdukByCategory($kategori),
-        // ];
-
-        // return view('produk/kategori_produk', $data);
-        $data = [
-            'title' => $kategori,
-            'produk' => $this->produkModel->getProdukByCategory($kategori),
-        ];
-
-        return view('produk/kategori_produk', $data);
-    }
-
-    // public function laptop()
-    // {
-    //     $data = [
-    //         'title' => "Laptop",
-    //         'produk' => $this->produkModel->getProdukByCategory('laptop'),
-    //     ];
-
-    //     return view('produk/laptop', $data);
-    // }
-
-    // public function smartphone()
-    // {
-    //     $data = [
-    //         'title' => "Smartphone",
-    //         'produk' => $this->produkModel->getProdukByCategory('smartphone'),
-    //     ];
-
-    //     return view('produk/laptop', $data);
-    // }
-
-    // public function produk($kategori)
+    // public function kategori($kategori)
     // {
     //     $data = [
     //         'title' => $kategori,
     //         'produk' => $this->produkModel->getProdukByCategory($kategori),
     //     ];
 
-    //     return view('produk/produk', $data);
+    //     return view('produk/kategori_produk', $data);
     // }
+
 
     public function detail($kategori, $namaBarang)
     {

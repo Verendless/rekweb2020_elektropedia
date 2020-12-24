@@ -16,13 +16,13 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item py-0 text-dark" href="/produk/">Semua Kategori</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/Laptop">Laptop</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/Laptop">Laptop</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/Smartphone">Smartphone</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/Smartphone">Smartphone</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/Kamera">Camera</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/Kamera">Camera</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="/produk/kategori/Aksesoris">Accessories</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/Aksesoris">Accessories</a>
                     </div>
                 </li>
             </ul>
@@ -35,7 +35,7 @@
                     <?php if (in_groups('Admin')) : ?>
                         <a class="nav-link pl-sm-0 mx-md-auto text-dark" href="<?= base_url(); ?>/admin/">Dashboard</a>
                     <?php else : ?>
-                        <a class="nav-link pl-md-1.5 pl-sm-0 ml-sm-0 mx-md-auto text-dark" href="/transaksi/cart" style="padding-top: 5px;">
+                        <a class="nav-link pl-md-1.5 pl-sm-0 ml-sm-0 mx-md-auto text-dark" href="/cart/<?= user()->username; ?>" style="padding-top: 5px;">
                             <svg width="1.2em" height="1.2em" viewBox="0 0 16 16" class="bi bi-cart2" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule=" evenodd" d="M0 2.5A.5.5 0 0 1 .5 2H2a.5.5 0 0 1 .485.379L2.89 4H14.5a.5.5 0 0 1 .485.621l-1.5 6A.5.5 0 0 1 13 11H4a.5.5 0 0 1-.485-.379L1.61 3H.5a.5.5 0 0 1-.5-.5zM3.14 5l1.25 5h8.22l1.25-5H3.14zM5 13a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0zm9-1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm-2 1a2 2 0 1 1 4 0 2 2 0 0 1-4 0z" />
                             </svg>

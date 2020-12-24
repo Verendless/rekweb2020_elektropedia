@@ -42,9 +42,4 @@ class ProdukModel extends Model
         $result = $this->db->query($sql, ['%' . $keyword . '%', '%' . $keyword . '%']);
         return $result->getResultArray();
     }
-
-    // public function search($keyword)
-    // {
-    //     return $this->table('produk')->like('nama', $keyword)->orLike('kategori', $keyword);
-    // }
 }

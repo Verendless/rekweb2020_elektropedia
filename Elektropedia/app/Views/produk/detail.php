@@ -8,7 +8,7 @@
     <ul class="linkProduk">
         <li><a href="/">Home</a></li>
         <li><i class="fas fa-caret-right mx-md-1" style="color: grey;"></i></li>
-        <li><a href="/produk/kategori/<?= $produk['kategori']; ?>"><?= $produk['kategori']; ?></a></li>
+        <li><a href="/produk/<?= $produk['kategori']; ?>"><?= $produk['kategori']; ?></a></li>
         <li><i class="fas fa-caret-right mx-md-1" style="color: grey;"></i></li>
         <li><?= $produk['nama']; ?></li>
     </ul>
@@ -39,7 +39,7 @@
                     <input type="text" disabled class="form-control-plaintext" value="<?= $produk['berat']; ?> Kg">
                 </div>
             </div>
-            <div class="input-group" style="width:50%">
+            <!-- <div class="input-group" style="width:50%">
                 <label>Jumlah</label>
                 <span class="input-group-btn ml-4">
                     <button class="btn btn-white btn-minuse" type="button">-</button>
@@ -48,15 +48,30 @@
                 <span class="input-group-btn">
                     <button class="btn btn-red btn-pluss" type="button">+</button>
                 </span>
-            </div>
+            </div> -->
             <hr>
             <?php if (!in_groups('Admin')) : ?>
-                <button class="btn-keranjang"><i class="fa fa-shopping-cart"></i> Tambah Ke Keranjang</button>
-                <a href="/transaksi/beliLangsung/<?= $produk['nama']; ?>/<?= user_id(); ?>"><button class="btn-beli ml-5"> Beli Sekarang</button></a>
-
-                <hr>
+                <?php if (logged_in()) : ?>
+                    <div class="row">
+                        <div class="col-6">
+                            <form action="/cart/save/<?= user_id(); ?>" method="post" enctype="multipart/form-data">
+                                <?= csrf_field(); ?>
+                                <input type="hidden" name="idProduk" value="<?= $produk['idProduk']; ?>">
+                                <input type="hidden" name="harga" value="<?= $produk['harga']; ?>">
+                                <button type="submit" class="btn-keranjang"><i class="fa fa-shopping-cart"></i> Tambah Ke Keranjang</button></a>
+                            </form>
+                        </div>
+                        <div class="col-6">
+                            <a href="/transaksi/beliLangsung/<?= $produk['nama']; ?>/<?= user_id(); ?>"><button class="btn-beli"> Beli Sekarang</button></a>
+                        </div>
+                    </div>
+                    <hr>
+                <?php else : ?>
+                    <a href=""><button class="btn-keranjang"><i class="fa fa-shopping-cart"></i> Tambah Ke Keranjang</button></a>
+                    <a href="/login"><button class="btn-beli ml-5"> Beli Sekarang</button></a>
+                    <hr>
+                <?php endif; ?>
             <?php endif; ?>
-
         </div>
     </div>
 </div>
@@ -67,7 +82,6 @@
         <p class="mt-2 "><?= $produk['deskripsi']; ?></p>
     </div>
 </div>
-
 <section class="mt-4">
     <div class="container">
         <hr>
@@ -91,7 +105,6 @@
         </div>
     </div>
 </section>
-
 <section class="mt-4">
     <div class="container">
         <hr>
@@ -115,5 +128,4 @@
         </div>
     </div>
 </section>
-
 <?= $this->endSection(); ?>

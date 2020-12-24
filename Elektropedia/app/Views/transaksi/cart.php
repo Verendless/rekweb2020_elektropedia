@@ -4,72 +4,54 @@
 <!-- Begin Page Content -->
 <div class="container">
     <h4 class="mt-5">Keranjang</h4>
+    <?php if (session()->getFlashData('pesan')) : ?>
+        <div class="alert alert-success mt-3" role="alert">
+            <?= session()->getFlashData('pesan'); ?>
+        </div>
+    <?php endif; ?>
     <div class="row">
         <div class="col-md-7 col-sm-12 mt-2">
-            <hr style="height:5px;border:none;background-color:#D0D3D4;">
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="/img/1608469160_7b40073f876a293a6981.jpg" class="img-thumbnail rounded">
+            <?php foreach ($item as $i) : ?>
+                <hr class="my-0" style="height:5px;border:none;background-color:#D0D3D4;">
+                <div class="row">
+                    <div class="col-3">
+                        <img src="/img/<?= $i['gambar']; ?>" class="rounded img-fluid mt-3">
+                    </div>
+                    <div class="col-9">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td><a class="text-decoration-none text-body font-weight-bold" href="/produk/<?= $i['kategori']; ?>/<?= $i['nama']; ?>"><?= $i['nama']; ?></a></td>
+                                </tr>
+                                <tr>
+                                    <td>Rp<?= number_format($i['harga']); ?>,-</td>
+                                </tr>
+                                <tr>
+                                    <td><a class="btn btn-danger" href="/cart/delete/<?= $i['id']; ?>/<?= user()->username; ?>" role="button"><i class="fas fa-trash"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
-                <div class="col-md-9">
-                    <table class="table">
-                        <tr>
-                            <th>Nama Barang</th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>Harga</th>
-                            <td>Rp,-</td>
-                        </tr>
-                        <tr>
-                            <th>Jumlah Barang</th>
-                            <td>1</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <hr style="height:5px;border:none;background-color:#D0D3D4;">
-            <div class="row">
-                <div class="col-md-3">
-                    <img src="/img/1608469160_7b40073f876a293a6981.jpg" class="img-thumbnail rounded">
-                </div>
-                <div class="col-md-9">
-                    <table class="table">
-                        <tr>
-                            <th>Nama Barang</th>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <th>Harga</th>
-                            <td>Rp,-</td>
-                        </tr>
-                        <tr>
-                            <th>Jumlah Barang</th>
-                            <td>1</td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
+            <?php endforeach; ?>
         </div>
-        <div class="col-md-3 offset-md-1 col-sm-12">
+        <div class="col-md-4 offset-md-1 col-sm-12">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title font-weight-bold">Ringkasan Pembelian</h5>
-                    <table class="table">
-                        <tr>
-                            <td>Harga</td>
-                            <td>Rp,-</td>
-                        </tr>
+                    <table class="table table-borderless">
                         <tr>
                             <td>Ongkir</td>
                             <td>Rp15.000,-</td>
                         </tr>
                         <tr>
-                            <td class="font-weight-bold">Total harga</td>
-                            <td>Rp,-</td>
+                            <?php foreach ($totalHarga as $th) : ?>
+                                <td class="font-weight-bold">Total harga</td>
+                                <td>Rp<?= number_format($th['totalHarga']); ?>.-</td>
+                            <?php endforeach; ?>
                         </tr>
                     </table>
-                    <button type="submit" class="btn btn-primary btn-block">Bayar</button>
+                    <button type="submit" class="btn btn-primary btn-block">Beli</button>
                 </div>
             </div>
         </div>

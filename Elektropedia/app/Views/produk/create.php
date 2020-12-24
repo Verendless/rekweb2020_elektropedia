@@ -34,7 +34,7 @@
                 <div class="form-group row">
                     <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi</label>
                     <div class="col-sm-10">
-                        <textarea type="text" class="form-control" id="deskripsi" name="deskripsi" value="<?= old('deskripsi'); ?>"></textarea>
+                        <textarea type="text" class="form-control" id="deskripsi" rows="20" name="deskripsi" value="<?= old('deskripsi'); ?>"></textarea>
                     </div>
                 </div>
                 <div class="form-group row">

@@ -12,8 +12,6 @@ class ModelUser extends Model
 
     public function getUser()
     {
-        // $id = user_id();
-        // return $this->where('id', $id)->first();
         return $this->findAll();
     }
 
@@ -24,9 +22,6 @@ class ModelUser extends Model
 
     public function getUserByUsername($username)
     {
-        // if ($id == false) {
-        //     return $this->findAll();
-        // }
         return $this->where(['username' => $username])->first();
     }
 

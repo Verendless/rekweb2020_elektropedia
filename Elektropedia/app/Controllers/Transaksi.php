@@ -24,15 +24,6 @@ class Transaksi extends BaseController
         ];
         return view('transaksi/beli_langsung', $data);
     }
-
-    public function cart()
-    {
-        $data = [
-            'title' => 'Cart',
-
-        ];
-        return view('transaksi/cart', $data);
-    }
     //--------------------------------------------------------------------
 
 }
