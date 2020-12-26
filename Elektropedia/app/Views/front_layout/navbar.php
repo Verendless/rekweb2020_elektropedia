@@ -16,13 +16,13 @@
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item py-0 text-dark" href="/produk/">Semua Kategori</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="/produk/Laptop">Laptop</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/laptop">Laptop</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="/produk/Smartphone">Smartphone</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/smartphone">Smartphone</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="/produk/Kamera">Camera</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/kamera">Camera</a>
                         <div class="dropdown-divider py-0 text-dark"></div>
-                        <a class="dropdown-item py-0 text-dark" href="/produk/Aksesoris">Accessories</a>
+                        <a class="dropdown-item py-0 text-dark" href="/produk/aksesoris">Accessories</a>
                     </div>
                 </li>
             </ul>

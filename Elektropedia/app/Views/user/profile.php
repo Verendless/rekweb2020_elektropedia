@@ -40,9 +40,27 @@
                 </div>
                 <h4>Detail Alamat</h4>
                 <div class="form-group row">
-                    <label class="col-md-2  col-form-label">Alamat</label>
+                    <label class="col-md-2  col-form-label">Provinsi</label>
                     <div class="col-md-10">
-                        <input type="text" disabled class="form-control-plaintext" id="staticEmail" value="email@example.com">
+                        <input type="text" disabled class="form-control-plaintext" id="staticEmail" value="<?= $alamat['provinsi']; ?>">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2  col-form-label">Kota/Kabupaten</label>
+                    <div class="col-md-10">
+                        <input type="text" disabled class="form-control-plaintext" id="staticEmail" value="<?= $alamat['kota']; ?>">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2  col-form-label">Kecamatan</label>
+                    <div class="col-md-10">
+                        <input type="text" disabled class="form-control-plaintext" id="staticEmail" value="<?= $alamat['kecamatan']; ?>">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-2  col-form-label">Kelurahan</label>
+                    <div class="col-md-10">
+                        <input type="text" disabled class="form-control-plaintext" id="staticEmail" value="<?= $alamat['kelurahan']; ?>">
                     </div>
                 </div>
             </form>

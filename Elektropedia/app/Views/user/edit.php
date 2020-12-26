@@ -54,11 +54,29 @@
                     </div>
                 </div>
                 <h4>Ubah Detail Alamat</h4>
-                <div class="form-group row">
-                    <label for="staticEmail" class="col-sm-2 col-form-label">Alamat</label>
-                    <div class="col-sm-10">
-                        <input type="text" disabled class="form-control" id="staticEmail" value="email@example.com">
-                    </div>
+                <div class="form-group">
+                    <label>Provinsi</label>
+                    <select name="provinsi" id="provinsi" class="custom-select">
+                        <option value="">Pilih Provinsi</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Kota/Kabupaten</label>
+                    <select name="kota" id="kota" class="custom-select">
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Kecamatan</label>
+                    <select name="kecamatan" id="kecamatan" class="custom-select">
+                        <option value=""></option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>kelurahan</label>
+                    <select name="kelurahan" id="kelurahan" class="custom-select">
+                        <option value=""></option>
+                    </select>
                 </div>
                 <div class="form-group row">
                     <div class="col-sm-10">

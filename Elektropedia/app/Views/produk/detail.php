@@ -67,7 +67,7 @@
                     </div>
                     <hr>
                 <?php else : ?>
-                    <a href=""><button class="btn-keranjang"><i class="fa fa-shopping-cart"></i> Tambah Ke Keranjang</button></a>
+                    <a href="/login"><button class="btn-keranjang"><i class="fa fa-shopping-cart"></i> Tambah Ke Keranjang</button></a>
                     <a href="/login"><button class="btn-beli ml-5"> Beli Sekarang</button></a>
                     <hr>
                 <?php endif; ?>

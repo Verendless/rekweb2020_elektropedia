@@ -2,14 +2,17 @@
 
 namespace App\Controllers;
 
+use App\Models\AlamatModel;
 use App\Models\ModelUser;
 
 class User extends BaseController
 {
     protected $modelUser;
+    protected $alamatModel;
     public function __construct()
     {
         $this->modelUser = new ModelUser();
+        $this->alamatModel = new AlamatModel();
     }
 
     public function profile($username)
@@ -17,6 +20,7 @@ class User extends BaseController
         $data = [
             'title' => 'Profile ' . $username,
             'user' => $this->modelUser->getUserByUsername($username),
+            'alamat' => $this->alamatModel->getData(),
         ];
         return view('user/profile', $data);
     }
@@ -26,7 +30,8 @@ class User extends BaseController
         $data = [
             'title' => 'Form Ubah Data Diri',
             'validation' => \Config\Services::validation(),
-            'user' => $this->modelUser->getUserById($id)
+            'user' => $this->modelUser->getUserById($id),
+            'alamat' => $this->alamatModel->getData($id),
         ];
         return view('user/edit', $data);
     }
@@ -87,6 +92,26 @@ class User extends BaseController
             'user_image' => $namaGambar,
 
         ]);
+
+        $this->alamatModel->where('idUser', $id)
+            ->set([
+                'provinsi' => $this->request->getVar('provinsi'),
+                'kota' => $this->request->getVar('kota'),
+                'kecamatan' => $this->request->getVar('kecamatan'),
+                'kelurahan' => $this->request->getVar('kelurahan'),
+                'idUser' => $id
+            ])
+            ->update();
+
+        // $this->alamatModel->update([
+        //     'provinsi' => $this->request->getVar('provinsi'),
+        //     'kota' => $this->request->getVar('kota'),
+        //     'kecamatan' => $this->request->getVar('kecamatan'),
+        //     'kelurahan' => $this->request->getVar('kelurahan'),
+        //     'idUser' => $id
+        // ]);
+
+
 
         session()->setFlashData('pesan', 'Data Berhasil Diupdate.');
         return redirect()->to('/user/profile/' . $this->request->getVar('username'));

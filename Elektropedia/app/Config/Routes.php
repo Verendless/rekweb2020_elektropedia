@@ -32,12 +32,10 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
-// $routes->get('/(:any)', 'Pages::index');
-// $routes->get('/', 'Produk::index');
 
 
-// $routes->get('/produk/kategori/(:any)', 'Produk::kategori/$1');
 $routes->get('/produk/create', 'Produk::create');
+$routes->get('/produk/daftarProduk', 'Produk::daftarProduk');
 $routes->get('/produk/(:segment)', 'Produk::index/$1');
 $routes->get('/produk/edit/(:segment)', 'Produk::edit/$1');
 $routes->get('/user/edit/(:segment)', 'User::edit/$1');
@@ -53,12 +51,6 @@ $routes->get('/transaksi/beliLangsung/(:any)/(:any)', 'Transaksi::beliLangsung/$
 // $routes->get('/admin/user', 'Admin::index', ['filter' => 'role:admin']);
 // $routes->get('/admin/(:num)', 'Admin::detail/$1', ['filter' => 'role:admin']);
 
-
-
-// $routes->get('/komik/create', 'Komik::create');
-// $routes->get('/komik/edit/(:segment)', 'Komik::edit/$1');
-// $routes->delete('/komik/(:num)', 'Komik::delete/$1');
-// $routes->get('/komik/(:any)', 'Komik::detail/$1');
 
 /**
  * --------------------------------------------------------------------
