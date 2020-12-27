@@ -80,13 +80,13 @@
                     <div class="form-group row">
                         <label class="col-md-2  col-form-label">Kecamatan</label>
                         <div class="col-md-10">
-                            <input type="text" disabled class="form-control-plaintext" id="kecamatan" value="">
+                            <input type="text" disabled class="form-control-plaintext" id="kecamatan" value="-">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label class="col-md-2  col-form-label">Kelurahan</label>
                         <div class="col-md-10">
-                            <input type="text" disabled class="form-control-plaintext" id="kelurahan" value="">
+                            <input type="text" disabled class="form-control-plaintext" id="kelurahan" value="-">
                         </div>
                     </div>
                 <?php endif; ?>

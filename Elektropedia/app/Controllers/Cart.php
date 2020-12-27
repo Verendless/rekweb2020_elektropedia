@@ -4,14 +4,18 @@ namespace App\Controllers;
 
 use App\Models\CartModel;
 use App\Models\ModelUser;
+use App\Models\ProdukModel;
 
 class Cart extends BaseController
 {
     protected $cartModel;
+    protected $modelUser;
+    protected $produkModel;
     public function __construct()
     {
         $this->cartModel = new CartModel();
         $this->modelUser = new ModelUser();
+        $this->produkModel = new ProdukModel();
     }
 
     public function index($username)
@@ -20,6 +24,7 @@ class Cart extends BaseController
             'title' => 'Keranjang',
             'item' => $this->cartModel->getData($username),
             'totalHarga' => $this->cartModel->getTotalHarga($username),
+            'produk' => $this->produkModel->getProductById(),
 
         ];
         return view('transaksi/cart', $data);

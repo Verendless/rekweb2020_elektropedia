@@ -30,7 +30,7 @@
                 <?php if ($produk != null) : ?>
                     <?php foreach ($produk as $p) : ?>
                         <div class="col mb-md-3">
-                            <a href="/produk/<?= $p['kategori']; ?>/<?= $p['nama']; ?>" class="text-decoration-none text-body">
+                            <a href="/produk/detail/<?= $p['kategori']; ?>/<?= $p['nama']; ?>" class="text-decoration-none text-body">
                                 <div class="card h-100">
                                     <img src="/img/<?= $p['gambar']; ?>" class="card-img-top pt-4" width="300px" alt="<?= $p['nama']; ?>">
                                     <div class="card-body">

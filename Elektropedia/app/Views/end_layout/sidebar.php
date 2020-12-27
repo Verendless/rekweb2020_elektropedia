@@ -145,9 +145,16 @@
 
         <!-- Nav Item - Menu Verifikasi Pembayaran -->
         <li class="nav-item">
-            <a class="nav-link" href="/user/edit/<?= user_id(); ?>">
+            <a class="nav-link" href="/user/edit_profile/<?= user_id(); ?>">
                 <i class="fas fa-user-edit"></i>
                 <span>Edit Profile</span>
+            </a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href="/user/edit_alamat//<?= user_id(); ?>">
+                <i class="fas fa-user-edit"></i>
+                <span>Edit Alamat</span>
             </a>
         </li>
 

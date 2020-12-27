@@ -39,16 +39,6 @@
                     <input type="text" disabled class="form-control-plaintext" value="<?= $produk['berat']; ?> Kg">
                 </div>
             </div>
-            <!-- <div class="input-group" style="width:50%">
-                <label>Jumlah</label>
-                <span class="input-group-btn ml-4">
-                    <button class="btn btn-white btn-minuse" type="button">-</button>
-                </span>
-                <input type="text" class="form-control no-padding add-color text-center height-25" maxlength="3" value="0">
-                <span class="input-group-btn">
-                    <button class="btn btn-red btn-pluss" type="button">+</button>
-                </span>
-            </div> -->
             <hr>
             <?php if (!in_groups('Admin')) : ?>
                 <?php if (logged_in()) : ?>

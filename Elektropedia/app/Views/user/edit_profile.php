@@ -6,7 +6,7 @@
     <!-- Page Heading -->
     <h1 class="h3 text-gray-800">Ubah Data Diri</h1>
     <hr>
-    <form action="/user/update/<?= $user['id']; ?>" method="post" enctype="multipart/form-data">
+    <form action="/user/update_profile/<?= $user['id']; ?>" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-4 col-sm-12 mt-md-4 bg-light">
                 <?= csrf_field(); ?>
@@ -53,38 +53,12 @@
                         <input type="text" class="form-control" id="noTelp" name="noTelp" value="<?= $user['noTelp']; ?>">
                     </div>
                 </div>
-                <h4>Ubah Detail Alamat</h4>
-                <div class="form-group">
-                    <label>Provinsi</label>
-                    <select name="provinsi" id="provinsi" class="custom-select">
-                        <option value="">Pilih Provinsi</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Kota/Kabupaten</label>
-                    <select name="kota" id="kota" class="custom-select">
-                        <option value=""></option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Kecamatan</label>
-                    <select name="kecamatan" id="kecamatan" class="custom-select">
-                        <option value=""></option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>kelurahan</label>
-                    <select name="kelurahan" id="kelurahan" class="custom-select">
-                        <option value=""></option>
-                    </select>
-                </div>
                 <div class="form-group row">
                     <div class="col-sm-10">
                         <button type="submit" class="btn btn-primary">Ubah Data </button>
                     </div>
                 </div>
             </div>
-        </div>
     </form>
 </div>
 <?= $this->endSection(); ?>

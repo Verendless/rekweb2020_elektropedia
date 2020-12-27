@@ -33,15 +33,15 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
 
-
+$routes->delete('/produk/delete/(:num)', 'Produk::delete/$1');
+$routes->get('/produk/detail/(:segment)/(:alphanum)', 'Produk::detail/$1/$2');
 $routes->get('/produk/create', 'Produk::create');
 $routes->get('/produk/daftarProduk', 'Produk::daftarProduk');
 $routes->get('/produk/(:segment)', 'Produk::index/$1');
 $routes->get('/produk/edit/(:segment)', 'Produk::edit/$1');
-$routes->get('/user/edit/(:segment)', 'User::edit/$1');
-$routes->delete('/produk/(:num)', 'Produk::delete/$1');
+$routes->get('/user/edit_profile/(:segment)', 'User::edit_profile/$1');
+$routes->get('/user/edit_alamat/(:segment)', 'User::edit_alamat/$1');
 $routes->delete('/cart/(:num)/(:segment)', 'Produk::delete/$1/$2');
-$routes->get('/produk/(:segment)/(:segment)', 'Produk::detail/$1/$2');
 $routes->get('/cart/(:segment)', 'Cart::index/$1');
 $routes->get('/transaksi/beliLangsung/(:any)/(:any)', 'Transaksi::beliLangsung/$1/$2');
 

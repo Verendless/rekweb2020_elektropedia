@@ -28,66 +28,39 @@
                 </div>
             <?php endforeach; ?>
             <h5 class="mt-2">Pengiriman</h5>
-            <form action="">
+            <form action="post">
                 <div class="form-group">
                     <label for="nama">Nama</label>
                     <input type="text" class="form-control" id="nama" name="nama" value="<?= $user['fullname']; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="notelp">Nonor Telfon</label>
+                    <label for="notelp">Nomor Telfon</label>
                     <input type="text" class="form-control" id="notelp" name="notelp" placeholder="No Telfon" value="<?= $user['noTelp']; ?>">
                 </div>
                 <div class="form-group">
-                    <label for="provinsi">Provinsi</label>
-                    <select class="form-control" id="provinsi" name="provinsi">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                    <label>Provinsi</label>
+                    <select name="provinsi" id="provinsi" class="custom-select">
+                        <option value="">Pilih Provinsi</option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="kota">Kota/Kabupaten</label>
-                    <select class="form-control" id="kota" name="kota">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                    <label>Kota</label>
+                    <select name="kota" id="kota" class="custom-select">
+                        <option value=""></option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="kecamatan">Kecamatan</label>
-                    <select class="form-control" id="kecamatan" name="kecamatan">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                    <label>Kecamatan</label>
+                    <select name="kecamatan" id="kecamatan" class="custom-select">
+                        <option value=""></option>
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="kelurahan">Kelurahan</label>
-                    <select class="form-control" id="kelurahan" name="kelurahan">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
+                    <label>kelurahan</label>
+                    <select name="kelurahan" id="kelurahan" class="custom-select">
+                        <option value=""></option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="kodepos">Kodepos</label>
-                    <select class="form-control" id="kodepos" name="kodepos">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                </div>
-            </form>
         </div>
         <div class="col-md-4 offset-md-1 col-sm-12">
             <div class="card">

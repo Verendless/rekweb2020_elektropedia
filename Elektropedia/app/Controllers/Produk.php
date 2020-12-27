@@ -83,6 +83,23 @@ class Produk extends BaseController
         return view('produk/detail', $data);
     }
 
+    public function laptop($namaBarang)
+    {
+
+        $data = [
+            'title' => $namaBarang,
+            'produk' => $this->produkModel->getProdukByNama($namaBarang),
+            'relevanProduk' => $this->produkModel->getProdukByCategory('laptop'),
+            'produkLain' => $this->produkModel->getProductById(),
+
+        ];
+        if (empty($data['produk'])) {
+
+            return redirect()->to('/produk');
+        }
+        return view('produk/detail', $data);
+    }
+
     public function create()
     {
         // $komik =  $this->komikModel->findAll();

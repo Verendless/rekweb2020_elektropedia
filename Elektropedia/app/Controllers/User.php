@@ -25,7 +25,7 @@ class User extends BaseController
         return view('user/profile', $data);
     }
 
-    public function edit($id)
+    public function edit_profile($id)
     {
         $data = [
             'title' => 'Form Ubah Data Diri',
@@ -33,10 +33,36 @@ class User extends BaseController
             'user' => $this->modelUser->getUserById($id),
             'alamat' => $this->alamatModel->getData($id),
         ];
-        return view('user/edit', $data);
+        return view('user/edit_profile', $data);
     }
 
-    public function update($id)
+    public function edit_alamat($id)
+    {
+        $data = [
+            'title' => 'Form Ubah Alamat',
+            'user' => $this->modelUser->getUserById($id),
+            'alamat' => $this->alamatModel->getData($id),
+        ];
+        return view('user/edit_alamat', $data);
+    }
+
+    public function update_alamat($id)
+    {
+        $this->alamatModel->where('idUser', $id)
+            ->set([
+                'provinsi' => $this->request->getVar('provinsi'),
+                'kota' => $this->request->getVar('kota'),
+                'kecamatan' => $this->request->getVar('kecamatan'),
+                'kelurahan' => $this->request->getVar('kelurahan'),
+                'idUser' => $id
+            ])
+            ->update();
+        session()->setFlashData('pesan', 'Data Berhasil Diupdate.');
+        return redirect()->to('/user/profile/' . user()->username);
+    }
+
+
+    public function update_profile($id)
     {
         $userLama = $this->modelUser->getUserById($this->request->getVar('id'));
         if ($userLama['username'] == $this->request->getVar('username')) {
@@ -92,16 +118,6 @@ class User extends BaseController
             'user_image' => $namaGambar,
 
         ]);
-
-        $this->alamatModel->where('idUser', $id)
-            ->set([
-                'provinsi' => $this->request->getVar('provinsi'),
-                'kota' => $this->request->getVar('kota'),
-                'kecamatan' => $this->request->getVar('kecamatan'),
-                'kelurahan' => $this->request->getVar('kelurahan'),
-                'idUser' => $id
-            ])
-            ->update();
 
         // $this->alamatModel->update([
         //     'provinsi' => $this->request->getVar('provinsi'),
