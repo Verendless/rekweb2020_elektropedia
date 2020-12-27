@@ -39,30 +39,57 @@
                     </div>
                 </div>
                 <h4>Detail Alamat</h4>
-                <div class="form-group row">
-                    <label class="col-md-2  col-form-label">Provinsi</label>
-                    <div class="col-md-10">
-                        <input type="text" disabled class="form-control-plaintext" id="staticEmail" value="<?= $alamat['provinsi']; ?>">
+                <?php if ($alamat != null) : ?>
+                    <div class="form-group row">
+                        <label class="col-md-2  col-form-label">Provinsi</label>
+                        <div class="col-md-10">
+                            <input type="text" disabled class="form-control-plaintext" id="provinsi" value="<?= $alamat['provinsi']; ?>">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-md-2  col-form-label">Kota/Kabupaten</label>
-                    <div class="col-md-10">
-                        <input type="text" disabled class="form-control-plaintext" id="staticEmail" value="<?= $alamat['kota']; ?>">
+                    <div class="form-group row">
+                        <label class="col-md-2  col-form-label">Kota/Kabupaten</label>
+                        <div class="col-md-10">
+                            <input type="text" disabled class="form-control-plaintext" id="kota" value="<?= $alamat['kota']; ?>">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-md-2  col-form-label">Kecamatan</label>
-                    <div class="col-md-10">
-                        <input type="text" disabled class="form-control-plaintext" id="staticEmail" value="<?= $alamat['kecamatan']; ?>">
+                    <div class="form-group row">
+                        <label class="col-md-2  col-form-label">Kecamatan</label>
+                        <div class="col-md-10">
+                            <input type="text" disabled class="form-control-plaintext" id="kecamatan" value="<?= $alamat['kecamatan']; ?>">
+                        </div>
                     </div>
-                </div>
-                <div class="form-group row">
-                    <label class="col-md-2  col-form-label">Kelurahan</label>
-                    <div class="col-md-10">
-                        <input type="text" disabled class="form-control-plaintext" id="staticEmail" value="<?= $alamat['kelurahan']; ?>">
+                    <div class="form-group row">
+                        <label class="col-md-2  col-form-label">Kelurahan</label>
+                        <div class="col-md-10">
+                            <input type="text" disabled class="form-control-plaintext" id="kelurahan" value="<?= $alamat['kelurahan']; ?>">
+                        </div>
                     </div>
-                </div>
+                <?php else : ?>
+                    <div class="form-group row">
+                        <label class="col-md-2  col-form-label">Provinsi</label>
+                        <div class="col-md-10">
+                            <input type="text" disabled class="form-control-plaintext" id="provinsi" value="-">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2  col-form-label">Kota/Kabupaten</label>
+                        <div class="col-md-10">
+                            <input type="text" disabled class="form-control-plaintext" id="kota" value="-">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2  col-form-label">Kecamatan</label>
+                        <div class="col-md-10">
+                            <input type="text" disabled class="form-control-plaintext" id="kecamatan" value="">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2  col-form-label">Kelurahan</label>
+                        <div class="col-md-10">
+                            <input type="text" disabled class="form-control-plaintext" id="kelurahan" value="">
+                        </div>
+                    </div>
+                <?php endif; ?>
             </form>
         </div>
     </div>
