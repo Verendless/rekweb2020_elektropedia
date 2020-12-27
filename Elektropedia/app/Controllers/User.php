@@ -48,19 +48,57 @@ class User extends BaseController
 
     public function update_alamat($id)
     {
-        $this->alamatModel->where('idUser', $id)
-            ->set([
+        $alamat = $this->alamatModel->getData();
+        if ($alamat != null) {
+            $this->alamatModel->where('idUser', $id)
+                ->set([
+                    'provinsi' => $this->request->getVar('provinsi'),
+                    'kota' => $this->request->getVar('kota'),
+                    'kecamatan' => $this->request->getVar('kecamatan'),
+                    'kelurahan' => $this->request->getVar('kelurahan'),
+                    'idUser' => $id
+                ])
+                ->update();
+        } else {
+            $this->alamatModel->save([
                 'provinsi' => $this->request->getVar('provinsi'),
                 'kota' => $this->request->getVar('kota'),
                 'kecamatan' => $this->request->getVar('kecamatan'),
                 'kelurahan' => $this->request->getVar('kelurahan'),
-                'idUser' => $id
-            ])
-            ->update();
+                'idUser' => $id,
+            ]);
+        }
+
         session()->setFlashData('pesan', 'Data Berhasil Diupdate.');
         return redirect()->to('/user/profile/' . user()->username);
     }
 
+    public function add_alamat_at_checkout($id)
+    {
+        $this->alamatModel->save([
+            'provinsi' => $this->request->getVar('provinsi'),
+            'kota' => $this->request->getVar('kota'),
+            'kecamatan' => $this->request->getVar('kecamatan'),
+            'kelurahan' => $this->request->getVar('kelurahan'),
+            'idUser' => $id,
+        ]);
+        session()->setFlashData('pesan', 'Data Berhasil Diupdate.');
+        return redirect()->to('/cart/checkout/' . user()->username);
+    }
+
+    public function add_alamat_at_beli_langsung($id)
+    {
+        $produk = $this->request->getVar('namaProduk');
+        $this->alamatModel->save([
+            'provinsi' => $this->request->getVar('provinsi'),
+            'kota' => $this->request->getVar('kota'),
+            'kecamatan' => $this->request->getVar('kecamatan'),
+            'kelurahan' => $this->request->getVar('kelurahan'),
+            'idUser' => $id,
+        ]);
+        session()->setFlashData('pesan', 'Data Berhasil Diupdate.');
+        return redirect()->to('/transaksi/beliLangsung/' . $produk . '/' . user_id());
+    }
 
     public function update_profile($id)
     {
@@ -118,16 +156,6 @@ class User extends BaseController
             'user_image' => $namaGambar,
 
         ]);
-
-        // $this->alamatModel->update([
-        //     'provinsi' => $this->request->getVar('provinsi'),
-        //     'kota' => $this->request->getVar('kota'),
-        //     'kecamatan' => $this->request->getVar('kecamatan'),
-        //     'kelurahan' => $this->request->getVar('kelurahan'),
-        //     'idUser' => $id
-        // ]);
-
-
 
         session()->setFlashData('pesan', 'Data Berhasil Diupdate.');
         return redirect()->to('/user/profile/' . $this->request->getVar('username'));

@@ -28,39 +28,47 @@
                 </div>
             <?php endforeach; ?>
             <h5 class="mt-2">Pengiriman</h5>
-            <form action="post">
-                <div class="form-group">
-                    <label for="nama">Nama</label>
-                    <input type="text" class="form-control" id="nama" name="nama" value="<?= $user['fullname']; ?>">
-                </div>
-                <div class="form-group">
-                    <label for="notelp">Nomor Telfon</label>
-                    <input type="text" class="form-control" id="notelp" name="notelp" placeholder="No Telfon" value="<?= $user['noTelp']; ?>">
-                </div>
-                <div class="form-group">
-                    <label>Provinsi</label>
-                    <select name="provinsi" id="provinsi" class="custom-select">
-                        <option value="">Pilih Provinsi</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Kota</label>
-                    <select name="kota" id="kota" class="custom-select">
-                        <option value=""></option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Kecamatan</label>
-                    <select name="kecamatan" id="kecamatan" class="custom-select">
-                        <option value=""></option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>kelurahan</label>
-                    <select name="kelurahan" id="kelurahan" class="custom-select">
-                        <option value=""></option>
-                    </select>
-                </div>
+            <?php if ($alamat != null && $alamat['provinsi'] != null && $alamat['kota'] != null && $alamat['kecamatan'] != null && $alamat['kelurahan'] != null) : ?>
+                <p><?= $user['fullname']; ?> (<?= $user['noTelp']; ?>) <?= $alamat['kelurahan'] . ' ' . $alamat['kecamatan'] . ' ' . $alamat['kota'] . ' ' . $alamat['provinsi'];; ?></p>
+            <?php else : ?>
+                <form action="/user/add_alamat_at_checkout/<?= $user['id']; ?>" method="POST">
+                    <div class="form-group row">
+                        <label for="nama">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama" value="<?= $user['fullname']; ?>">
+                    </div>
+                    <div class="form-group row">
+                        <label for="notelp">Nomor Telfon</label>
+                        <input type="text" class="form-control" id="notelp" name="notelp" placeholder="No Telfon" value="<?= $user['noTelp']; ?>">
+                    </div>
+                    <div class="form-group row">
+                        <label>Provinsi</label>
+                        <select name="provinsi" id="provinsi" class="custom-select">
+                            <option value="">Pilih Provinsi</option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label>Kota</label>
+                        <select name="kota" id="kota" class="custom-select">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label>Kecamatan</label>
+                        <select name="kecamatan" id="kecamatan" class="custom-select">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <label>kelurahan</label>
+                        <select name="kelurahan" id="kelurahan" class="custom-select">
+                            <option value=""></option>
+                        </select>
+                    </div>
+                    <div class="form-group row">
+                        <button type="submit" class="btn btn-primary">Tambah Alamat</button>
+                    </div>
+                </form>
+            <?php endif; ?>
         </div>
         <div class="col-md-4 offset-md-1 col-sm-12">
             <div class="card">
@@ -78,7 +86,11 @@
                             <?php endforeach; ?>
                         </tr>
                     </table>
-                    <button type="submit" class="btn btn-primary btn-block">Bayar</button>
+                    <?php if ($alamat != null && $alamat['provinsi'] != null && $alamat['kota'] != null && $alamat['kecamatan'] != null && $alamat['kelurahan'] != null) : ?>
+                        <button type="submit" class="btn btn-primary btn-block">Bayar</button>
+                    <?php else : ?>
+                        <h6 class="text-center">Isi Data Alamat Terlebih Dahulu</h6 class="text-center">
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

@@ -52,7 +52,7 @@
                             </form>
                         </div>
                         <div class="col-6">
-                            <a href="/transaksi/beliLangsung/<?= $produk['nama']; ?>/<?= user_id(); ?>"><button class="btn-beli"> Beli Sekarang</button></a>
+                            <a href="/transaksi/beliLangsung/<?= $produk['nama']; ?>"><button class="btn-beli"> Beli Sekarang</button></a>
                         </div>
                     </div>
                     <hr>

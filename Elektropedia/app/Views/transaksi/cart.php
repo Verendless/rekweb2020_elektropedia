@@ -88,5 +88,4 @@
         </div>
     <?php endif; ?>
 </div>
-</div>
 <?= $this->endSection(); ?>

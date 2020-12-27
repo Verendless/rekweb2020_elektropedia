@@ -152,7 +152,7 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href="/user/edit_alamat//<?= user_id(); ?>">
+            <a class="nav-link" href="/user/edit_alamat/<?= user_id(); ?>">
                 <i class="fas fa-user-edit"></i>
                 <span>Edit Alamat</span>
             </a>

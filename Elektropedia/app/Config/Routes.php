@@ -43,7 +43,7 @@ $routes->get('/user/edit_profile/(:segment)', 'User::edit_profile/$1');
 $routes->get('/user/edit_alamat/(:segment)', 'User::edit_alamat/$1');
 $routes->delete('/cart/(:num)/(:segment)', 'Produk::delete/$1/$2');
 $routes->get('/cart/(:segment)', 'Cart::index/$1');
-$routes->get('/transaksi/beliLangsung/(:any)/(:any)', 'Transaksi::beliLangsung/$1/$2');
+$routes->get('/transaksi/beliLangsung/(:segment)', 'Transaksi::beliLangsung/$1');
 
 
 // // route since we don't have to scan directories.

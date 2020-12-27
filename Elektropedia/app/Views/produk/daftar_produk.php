@@ -62,7 +62,7 @@
                         <td><?= $p['berat']; ?>Kg</td>
 
                         <td>
-                            <a href="/produk/<?= $p['nama']; ?>" class="btn btn-success">Detail</a>
+                            <a href="/produk/detail/<?= $p['kategori']; ?>/<?= $p['nama']; ?>" class="btn btn-success">Detail</a>
                             <a href="/produk/edit/<?= $p['idProduk']; ?>" class="btn btn-primary">Ubah</a>
                             <a href="/produk/delete/<?= $p['idProduk']; ?>" class="btn btn-danger" onclick="return confirm('Apakah Anda Yakin Ingin Menghapus Produk <?= $p['nama']; ?>?');">Delete</a>
                         </td>

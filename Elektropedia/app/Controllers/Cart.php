@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\AlamatModel;
 use App\Models\CartModel;
 use App\Models\ModelUser;
 use App\Models\ProdukModel;
@@ -11,11 +12,13 @@ class Cart extends BaseController
     protected $cartModel;
     protected $modelUser;
     protected $produkModel;
+    protected $alamatModel;
     public function __construct()
     {
         $this->cartModel = new CartModel();
         $this->modelUser = new ModelUser();
         $this->produkModel = new ProdukModel();
+        $this->alamatModel = new AlamatModel();
     }
 
     public function index($username)
@@ -25,6 +28,7 @@ class Cart extends BaseController
             'item' => $this->cartModel->getData($username),
             'totalHarga' => $this->cartModel->getTotalHarga($username),
             'produk' => $this->produkModel->getProductById(),
+            'alamat' => $this->alamatModel->getData(),
 
         ];
         return view('transaksi/cart', $data);
@@ -37,6 +41,7 @@ class Cart extends BaseController
             'items' => $this->cartModel->getData($username),
             'totalHarga' => $this->cartModel->getTotalHarga($username),
             'user' => $this->modelUser->getUserByUsername($username),
+            'alamat' => $this->alamatModel->getData(),
 
         ];
         return view('transaksi/checkout', $data);

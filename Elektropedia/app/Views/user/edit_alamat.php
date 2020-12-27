@@ -5,6 +5,7 @@
     <h1 class="h3 text-gray-800">Ubah Detail Alamat</h1>
     <hr>
     <form action="/user/update_alamat/<?= $user['id']; ?>" method="post">
+        <input type="hidden" name="id" value="<?= $user['id']; ?>">
         <div class="form-group">
             <label>Provinsi</label>
             <select name="provinsi" id="provinsi" class="custom-select">
