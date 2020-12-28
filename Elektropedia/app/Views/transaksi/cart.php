@@ -71,7 +71,7 @@
             <?php $i = 0;
             foreach ($produk as $p) : ?>
                 <?php if ($produk != null && $i < 5) : ?>
-                    <div class="col-md col-sm-12 mx-auto mb-3">
+                    <div class="col-md col-sm-12 mx-auto mb-md-3">
                         <a href="/produk/<?= $p['kategori']; ?>/<?= $p['nama']; ?>" class="text-decoration-none text-body">
                             <div class="card h-100">
                                 <img src="/img/<?= $p['gambar']; ?>" class="card-img-top pt-4" width="300px" alt="<?= $p['nama']; ?>">

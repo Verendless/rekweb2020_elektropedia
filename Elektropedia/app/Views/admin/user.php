@@ -24,9 +24,8 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Username</th>
+                        <th scope="col">Full Name</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Role</th>
-                        <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -35,12 +34,8 @@
                         <tr>
                             <th scope="row"><?= $i++; ?></th>
                             <td><?= $user['username']; ?></td>
+                            <td><?= $user['fullname']; ?></td>
                             <td><?= $user['email']; ?></td>
-                            <td><?= $user['name']; ?></td>
-                            <td>
-                                <a href="<?= base_url('admin/' . $user['id']); ?>" class="btn btn-info">Detail</a>
-                            </td>
-
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

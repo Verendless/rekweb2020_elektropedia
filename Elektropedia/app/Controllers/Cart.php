@@ -49,8 +49,6 @@ class Cart extends BaseController
 
     public function save($idUser)
     {
-
-
         $this->cartModel->save([
             'idProduk' => $this->request->getVar('idProduk'),
             'idUser' => $idUser,

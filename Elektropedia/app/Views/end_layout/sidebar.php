@@ -45,7 +45,7 @@
 
         <!-- Nav Item - Menu Penjualan -->
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/transaksi/daftar_pesanan">
                 <i class="fas fa-receipt"></i>
                 <span>Penjualan</span>
             </a>
@@ -75,36 +75,11 @@
             </a>
         </li>
 
-
-        <!-- Nav Item - Kategori Collapse Menu -->
-        <!-- <li class="nav-item">
-            <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
-                <i class="fas fa-fw fa-clipboard-list"></i>
-                <span>Kategori</span>
-            </a>
-            <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
-                <div class="bg-white py-2 collapse-inner rounded">
-                    <h6 class="collapse-header">Daftar Kategori:</h6>
-                    <a class="collapse-item" href="">Laptop</a>
-                    <a class="collapse-item" href="">Smartphones</a>
-                    <a class="collapse-item" href="">Cameras</a>
-                    <a class="collapse-item" href="">Accessories</a>
-                </div>
-            </div>
-        </li> -->
-
         <!-- Nav Item - Charts -->
         <li class="nav-item">
             <a class="nav-link" href=" <?= base_url(); ?>/produk/create">
                 <i class="fas fa-fw fa-plus-circle"></i>
                 <span>Tambah Produk</span></a>
-        </li>
-
-        <!-- Nav Item - Tables -->
-        <li class="nav-item">
-            <a class="nav-link" href="tables.html">
-                <i class="fas fa-fw fa-table"></i>
-                <span>Tables</span></a>
         </li>
 
         <!-- Divider -->
@@ -168,7 +143,7 @@
 
         <!-- Nav Item - Menu Produk -->
         <li class="nav-item">
-            <a class="nav-link" href="#">
+            <a class="nav-link" href="/transaksi/daftar_pesanan">
                 <i class="fas fa-receipt"></i>
                 <span>Pemesanan</span>
             </a>

@@ -3,16 +3,19 @@
 namespace App\Controllers;
 
 use App\Models\ModelUser;
+use App\Models\PemesananModel;
 use App\Models\ProdukModel;
 
 class Admin extends BaseController
 {
     protected $modelUser;
     protected $produkModel;
+    protected $pemesananModel;
     public function __construct()
     {
         $this->modelUser = new ModelUser();
         $this->produkModel = new ProdukModel();
+        $this->pemesananModel = new PemesananModel();
     }
     public function index()
     {
@@ -20,6 +23,9 @@ class Admin extends BaseController
             'title' => 'Admin Dashboard',
             'user' => $this->modelUser->getUser(),
             'produk' => $this->produkModel->getProductById(),
+            'pesanan' => $this->pemesananModel->getAllData(),
+
+
         ];
         return view('admin/index', $data);
     }

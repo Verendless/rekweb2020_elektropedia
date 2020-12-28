@@ -28,10 +28,10 @@
                 </div>
             <?php endforeach; ?>
             <h5 class="mt-2">Pengiriman</h5>
-            <?php if ($alamat != null && $alamat['provinsi'] != null && $alamat['kota'] != null && $alamat['kecamatan'] != null && $alamat['kelurahan'] != null) : ?>
+            <?php if ($user['fullname'] != null && $user['noTelp'] != null && $alamat != null && $alamat['provinsi'] != null && $alamat['kota'] != null && $alamat['kecamatan'] != null && $alamat['kelurahan'] != null) : ?>
                 <p><?= $user['fullname']; ?> (<?= $user['noTelp']; ?>) <?= $alamat['kelurahan'] . ' ' . $alamat['kecamatan'] . ' ' . $alamat['kota'] . ' ' . $alamat['provinsi'];; ?></p>
             <?php else : ?>
-                <form action="/user/add_alamat_at_checkout/<?= $user['id']; ?>" method="POST">
+                <form action="/user/add_alamat_at_checkout" method="POST">
                     <div class="form-group row">
                         <label for="nama">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama" value="<?= $user['fullname']; ?>">
@@ -86,7 +86,7 @@
                             <?php endforeach; ?>
                         </tr>
                     </table>
-                    <?php if ($alamat != null && $alamat['provinsi'] != null && $alamat['kota'] != null && $alamat['kecamatan'] != null && $alamat['kelurahan'] != null) : ?>
+                    <?php if ($user['fullname'] != null && $user['noTelp'] != null && $alamat != null && $alamat['provinsi'] != null && $alamat['kota'] != null && $alamat['kecamatan'] != null && $alamat['kelurahan'] != null) : ?>
                         <button type="submit" class="btn btn-primary btn-block">Bayar</button>
                     <?php else : ?>
                         <h6 class="text-center">Isi Data Alamat Terlebih Dahulu</h6 class="text-center">

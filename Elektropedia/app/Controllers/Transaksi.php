@@ -34,6 +34,29 @@ class Transaksi extends BaseController
 
     public function pembayaran()
     {
+        $this->pemesananModel->save([
+            'idProduk' => $this->request->getVar('idProduk'),
+            'idUser' => user_id(),
+            'totalHarga' => $this->request->getVar('totalHarga'),
+        ]);
+
+        $data = [
+            'title' => 'Pembayaran',
+            'pemesanan' => $this->pemesananModel->getDataByUsername(),
+            'alamat' => $this->alamatModel->getData(),
+        ];
+        return view('transaksi/pembayaran', $data);
+    }
+
+    public function daftar_pesanan()
+    {
+        $data = [
+            'title' => 'Daftar Pesanan',
+            'pemesanan' => $this->pemesananModel->getDataByUsername(),
+            'semuaPesanan' => $this->pemesananModel->getData(),
+            'alamat' => $this->alamatModel->getData(),
+        ];
+        return view('transaksi/daftar_pesanan', $data);
     }
     //--------------------------------------------------------------------
 

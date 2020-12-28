@@ -75,12 +75,18 @@ class User extends BaseController
 
     public function add_alamat_at_checkout($id)
     {
+        $this->modelUser->save([
+            'id' => user_id(),
+            'fullname' => $this->request->getVar('fullname'),
+            'noTelp' => $this->request->getVar('noTelp'),
+        ]);
+
         $this->alamatModel->save([
             'provinsi' => $this->request->getVar('provinsi'),
             'kota' => $this->request->getVar('kota'),
             'kecamatan' => $this->request->getVar('kecamatan'),
             'kelurahan' => $this->request->getVar('kelurahan'),
-            'idUser' => $id,
+            'idUser' => user_id(),
         ]);
         session()->setFlashData('pesan', 'Data Berhasil Diupdate.');
         return redirect()->to('/cart/checkout/' . user()->username);
@@ -88,13 +94,19 @@ class User extends BaseController
 
     public function add_alamat_at_beli_langsung($id)
     {
+        $this->modelUser->save([
+            'id' => user_id(),
+            'fullname' => $this->request->getVar('fullname'),
+            'noTelp' => $this->request->getVar('noTelp'),
+        ]);
+
         $produk = $this->request->getVar('namaProduk');
         $this->alamatModel->save([
             'provinsi' => $this->request->getVar('provinsi'),
             'kota' => $this->request->getVar('kota'),
             'kecamatan' => $this->request->getVar('kecamatan'),
             'kelurahan' => $this->request->getVar('kelurahan'),
-            'idUser' => $id,
+            'idUser' => user_id(),
         ]);
         session()->setFlashData('pesan', 'Data Berhasil Diupdate.');
         return redirect()->to('/transaksi/beliLangsung/' . $produk . '/' . user_id());

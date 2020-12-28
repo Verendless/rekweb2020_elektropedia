@@ -11,21 +11,11 @@
                 <h6 class="text-uppercase font-weight-bold ">Kategori</h6>
                 <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto " style="width: 85px; height: 2px">
                 <ul class="list-unstyled">
-                    <li class="my-2"><a class="text-dark text-decoration-none" href="#">Laptop</a></li>
-                    <li class="my-2"><a class="text-dark text-decoration-none" href="#">Smartphone</a></li>
-                    <li class="my-2"><a class="text-dark text-decoration-none" href="#">Camera</a></li>
-                    <li class="my-2"><a class="text-dark text-decoration-none" href="#">Accessories</a></li>
-                </ul>
-            </div>
-
-            <div class="col-md-2 mx-auto mb-4">
-                <h6 class="text-uppercase font-weight-bold ">Kategori</h6>
-                <hr class="bg-primary mb-4 mt-0 d-inline-block mx-auto " style="width: 90px; height: 2px">
-                <ul class="list-unstyled">
-                    <li class="my-2"><a class="text-dark text-decoration-none" href="#">Laptop</a></li>
-                    <li class="my-2"><a class="text-dark text-decoration-none" href="#">Smartphone</a></li>
-                    <li class="my-2"><a class="text-dark text-decoration-none" href="#">Camera</a></li>
-                    <li class="my-2"><a class="text-dark text-decoration-none" href="#">Accessories</a></li>
+                    <li class="my-2"><a class="text-dark text-decoration-none" href="/produk">Semua Kategori</a></li>
+                    <li class="my-2"><a class="text-dark text-decoration-none" href="/produk/laptop">Laptop</a></li>
+                    <li class="my-2"><a class="text-dark text-decoration-none" href="/produk/smartphone">Smartphone</a></li>
+                    <li class="my-2"><a class="text-dark text-decoration-none" href="/produk/kamera">Camera</a></li>
+                    <li class="my-2"><a class="text-dark text-decoration-none" href="/produk/aksesoris">Accessories</a></li>
                 </ul>
             </div>
 

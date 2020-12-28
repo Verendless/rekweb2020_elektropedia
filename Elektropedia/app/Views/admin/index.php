@@ -39,20 +39,6 @@
                 </a>
             </div>
         </div>
-
-        <!-- <div class="col-sm-6 col-xl-3">
-            <div class="card">
-                <div class="card-heading p-4">
-                    <div class="mini-stat-icon float-right">
-                        <i class="mdi mdi-fireplace-off bg-success text-white"></i>
-                    </div>
-                    <div>
-                        <a href="" class="font-16">KATEGORI</a>
-                    </div>
-                    <h3 class="mt-4"></h3>
-                </div>
-            </div>
-        </div> -->
         <div class="col-sm-6 col-md-3 my-2">
             <div class="card">
                 <a href="<?= base_url('admin/produk') ?>" class="text-decoration-none text-body">
@@ -63,7 +49,7 @@
                         <div>
                             <h5 class="text-center">Total Penjualan</h5>
                         </div>
-                        <h5 class="mt-4 text-center fw-bold"><?= count($produk); ?></h5>
+                        <h5 class="mt-4 text-center fw-bold"><?= count($pesanan); ?></h5>
                     </div>
                 </a>
             </div>

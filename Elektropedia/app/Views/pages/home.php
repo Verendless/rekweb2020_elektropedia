@@ -57,7 +57,7 @@
                 </div>
             <?php endforeach ?>
         </div>
-        <a href="/produk/kategori/laptop" class="btn btn-primary">See More!</a>
+        <a href="/produk/laptop" class="btn btn-primary">See More!</a>
         <hr>
     </div>
 </section>
@@ -79,7 +79,7 @@
                 </div>
             <?php endforeach ?>
         </div>
-        <a href="/produk/kategori/smartphone" class="btn btn-primary">See More!</a>
+        <a href="/produk/smartphone" class="btn btn-primary">See More!</a>
         <hr>
     </div>
 </section>
@@ -101,7 +101,7 @@
                 </div>
             <?php endforeach ?>
         </div>
-        <a href="/produk/kategori/kamera" class="btn btn-primary">See More!</a>
+        <a href="/produk/kamera" class="btn btn-primary">See More!</a>
         <hr>
     </div>
 </section>
@@ -123,7 +123,7 @@
                 </div>
             <?php endforeach ?>
         </div>
-        <a href="/produk/kategori/aksesoris" class="btn btn-primary">See More!</a>
+        <a href="/produk/aksesoris" class="btn btn-primary">See More!</a>
     </div>
 </section>
 <div class="mb-md-2"></div>
