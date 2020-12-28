@@ -12,7 +12,7 @@
                 <?= csrf_field(); ?>
                 <input type="hidden" name="id" value="<?= $user['id']; ?>">
                 <input type="hidden" name="gambarLama" value="<?= $user['user_image']; ?>">
-                <h4>Ubah Proile Picture</h4>
+                <h4>Ubah Profile Picture</h4>
                 <img src="/img/<?= $user['user_image']; ?>" width="241px" class="img-fluid p-md-auto rounded img-preview mb-1" alt="User Image Profile">
                 <div class="custom-file">
                     <input type="file" class="custom-file-input <?= ($validation->hasError('gambar')) ? 'is-invalid' : ''; ?>" id="gambar" name="gambar" onchange="previewImg()">

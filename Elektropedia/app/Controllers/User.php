@@ -154,7 +154,7 @@ class User extends BaseController
             $fileGambar->move('img', $namaGambar);
             // hapus file lama
             $user = $this->modelUser->find(($id));
-            if ($user['user_image'] != 'default.jpg') {
+            if ($user['user_image'] != 'defaultuserpic.jpg') {
                 unlink('img/' . $this->request->getVar('gambarLama'));
             }
         }

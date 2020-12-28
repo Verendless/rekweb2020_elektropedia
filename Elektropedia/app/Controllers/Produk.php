@@ -55,15 +55,6 @@ class Produk extends BaseController
         return view('produk/daftar_produk', $data);
     }
 
-    // public function kategori($kategori)
-    // {
-    //     $data = [
-    //         'title' => $kategori,
-    //         'produk' => $this->produkModel->getProdukByCategory($kategori),
-    //     ];
-
-    //     return view('produk/kategori_produk', $data);
-    // }
 
 
     public function detail($kategori, $namaBarang)

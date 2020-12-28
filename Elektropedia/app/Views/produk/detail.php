@@ -81,7 +81,7 @@
             <?php foreach ($relevanProduk as $rp) : ?>
                 <?php if ($rp['idProduk'] != $produk['idProduk']  && $i < 5) : ?>
                     <div class="card mb-3 mx-3 shadow col-md-2">
-                        <a href="/produk/<?= $rp['kategori']; ?>/<?= $rp['nama']; ?>" class="text-decoration-none text-body">
+                        <a href="/produk/detail/<?= $rp['kategori']; ?>/<?= $rp['nama']; ?>" class="text-decoration-none text-body">
                             <img src="/img/<?= $rp['gambar']; ?>" class="card-img-top pt-4" alt="<?= $rp['nama']; ?>">
                             <div class="card-body">
                                 <p class="card-title"><?= $rp['nama']; ?></p>
@@ -104,7 +104,7 @@
             <?php foreach ($produkLain as $rp) : ?>
                 <?php if ($rp['kategori'] != $produk['kategori'] && $i < 5) : ?>
                     <div class="card mb-3 mx-3 shadow col-md-2">
-                        <a href="/produk/<?= $rp['kategori']; ?>/<?= $rp['nama']; ?>" class="text-decoration-none text-body">
+                        <a href="/produk/detail/<?= $rp['kategori']; ?>/<?= $rp['nama']; ?>" class="text-decoration-none text-body">
                             <img src="/img/<?= $rp['gambar']; ?>" class="card-img-top pt-4" alt="<?= $rp['nama']; ?>">
                             <div class="card-body">
                                 <p class="card-title"><?= $rp['nama']; ?></p>
