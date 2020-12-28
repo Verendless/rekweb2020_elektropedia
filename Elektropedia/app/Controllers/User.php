@@ -73,12 +73,12 @@ class User extends BaseController
         return redirect()->to('/user/profile/' . user()->username);
     }
 
-    public function add_alamat_at_checkout($id)
+    public function add_alamat_at_checkout()
     {
         $this->modelUser->save([
             'id' => user_id(),
-            'fullname' => $this->request->getVar('fullname'),
-            'noTelp' => $this->request->getVar('noTelp'),
+            'fullname' => $this->request->getVar('nama'),
+            'noTelp' => $this->request->getVar('notelp'),
         ]);
 
         $this->alamatModel->save([
@@ -92,12 +92,12 @@ class User extends BaseController
         return redirect()->to('/cart/checkout/' . user()->username);
     }
 
-    public function add_alamat_at_beli_langsung($id)
+    public function add_alamat_at_beli_langsung()
     {
         $this->modelUser->save([
             'id' => user_id(),
-            'fullname' => $this->request->getVar('fullname'),
-            'noTelp' => $this->request->getVar('noTelp'),
+            'fullname' => $this->request->getVar('nama'),
+            'noTelp' => $this->request->getVar('notelp'),
         ]);
 
         $produk = $this->request->getVar('namaProduk');

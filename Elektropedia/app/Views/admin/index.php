@@ -26,7 +26,7 @@
 
         <div class="col-sm-6 col-md-3 my-2">
             <div class="card">
-                <a href="<?= base_url('admin/produk') ?>" class="text-decoration-none text-body">
+                <a href="/produk/daftarProduk" class="text-decoration-none text-body">
                     <div class="card-heading p-4">
                         <div class="mini-stat-icon float-right">
                             <i class="mdi mdi-expand-all bg-primary  text-white"></i>
@@ -41,7 +41,7 @@
         </div>
         <div class="col-sm-6 col-md-3 my-2">
             <div class="card">
-                <a href="<?= base_url('admin/produk') ?>" class="text-decoration-none text-body">
+                <a href="/transaksi/daftar_pesanan" class="text-decoration-none text-body">
                     <div class="card-heading p-4">
                         <div class="mini-stat-icon float-right">
                             <i class="mdi mdi-expand-all bg-primary  text-white"></i>

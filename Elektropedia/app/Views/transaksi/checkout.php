@@ -31,7 +31,7 @@
             <?php if ($user['fullname'] != null && $user['noTelp'] != null && $alamat != null && $alamat['provinsi'] != null && $alamat['kota'] != null && $alamat['kecamatan'] != null && $alamat['kelurahan'] != null) : ?>
                 <p><?= $user['fullname']; ?> (<?= $user['noTelp']; ?>) <?= $alamat['kelurahan'] . ' ' . $alamat['kecamatan'] . ' ' . $alamat['kota'] . ' ' . $alamat['provinsi'];; ?></p>
             <?php else : ?>
-                <form action="/user/add_alamat_at_checkout" method="POST">
+                <form action="/user/add_alamat_at_checkoutl" method="POST">
                     <div class="form-group row">
                         <label for="nama">Nama</label>
                         <input type="text" class="form-control" id="nama" name="nama" value="<?= $user['fullname']; ?>">
