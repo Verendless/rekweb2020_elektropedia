@@ -39,7 +39,7 @@ class Produk extends BaseController
 
         $keyword = $this->request->getVar('keyword');
         if ($keyword) {
-            $produk = $this->produkModel->search($keyword);
+            $produk = $this->produkModel->searchBackEnd($keyword);
         } else {
             $produk = $this->produkModel;
         }
@@ -54,7 +54,6 @@ class Produk extends BaseController
         ];
         return view('produk/daftar_produk', $data);
     }
-
 
 
     public function detail($kategori, $namaBarang)
